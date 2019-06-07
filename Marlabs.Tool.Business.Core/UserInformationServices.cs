@@ -34,7 +34,9 @@ namespace BusinessServices
             var userInfomations = _unitOfWork.UserInformationRepository.GetAll().ToList().Where(u => u.USERID == userId).ToList();
             if (userInfomations != null)
             {
-                var userInformationModel = Mapper.Map<List<USERINFORMATION>, List<UserInformation>>(userInfomations);
+                var config = new MapperConfiguration(cfg => cfg.CreateMap<USERINFORMATION, UserInformation>());
+                var mapper = config.CreateMapper();
+                var userInformationModel = mapper.Map<List<USERINFORMATION>, List<UserInformation>>(userInfomations);
                 return userInformationModel;
             }
             return null;
