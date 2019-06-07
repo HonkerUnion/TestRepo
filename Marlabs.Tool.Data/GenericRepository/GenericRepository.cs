@@ -14,7 +14,7 @@ namespace Marlabs.Tool.Data.GenericRepository
         public class GenericRepository<TEntity> where TEntity : class
         {
             #region Private member variables...
-            internal ReportServerTempDBEntities Context;
+            internal HonkerUnionEntities Context;
             internal DbSet<TEntity> DbSet;
             #endregion
 
@@ -23,7 +23,7 @@ namespace Marlabs.Tool.Data.GenericRepository
             /// Public Constructor,initializes privately declared local variables.
             /// </summary>
             /// <param name="context"></param>
-            public GenericRepository(ReportServerTempDBEntities context)
+            public GenericRepository(HonkerUnionEntities context)
             {
                 this.Context = context;
                 this.DbSet = context.Set<TEntity>();

@@ -16,13 +16,13 @@ namespace Marlabs.Tool.Data.UnitOfWork
     {
         #region Private member variables...
 
-        private ReportServerTempDBEntities _context = null;
+        private HonkerUnionEntities _context = null;
         private GenericRepository<Product> _productRepository;
         #endregion
 
         public UnitOfWork()
         {
-            _context = new ReportServerTempDBEntities();
+            _context = new HonkerUnionEntities();
         }
 
 

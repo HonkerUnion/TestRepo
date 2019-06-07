@@ -10,3 +10,12 @@ C:\Users\Kamal.Kumar\source\repos\WebApplicationArch\Marlabs.Tool.Data\obj\Debug
 C:\Users\Kamal.Kumar\source\repos\WebApplicationArch\Marlabs.Tool.Data\obj\Debug\Marlabs.Tool.Data.csproj.CopyComplete
 C:\Users\Kamal.Kumar\source\repos\WebApplicationArch\Marlabs.Tool.Data\obj\Debug\Marlabs.Tool.Data.dll
 C:\Users\Kamal.Kumar\source\repos\WebApplicationArch\Marlabs.Tool.Data\obj\Debug\Marlabs.Tool.Data.pdb
+D:\mHack HokerUnion\honkerunion\Marlabs.Tool.Data\bin\Debug\Marlabs.Tool.Data.dll.config
+D:\mHack HokerUnion\honkerunion\Marlabs.Tool.Data\bin\Debug\Marlabs.Tool.Data.dll
+D:\mHack HokerUnion\honkerunion\Marlabs.Tool.Data\bin\Debug\Marlabs.Tool.Data.pdb
+D:\mHack HokerUnion\honkerunion\Marlabs.Tool.Data\bin\Debug\EntityFramework.dll
+D:\mHack HokerUnion\honkerunion\Marlabs.Tool.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\mHack HokerUnion\honkerunion\Marlabs.Tool.Data\bin\Debug\EntityFramework.xml
+D:\mHack HokerUnion\honkerunion\Marlabs.Tool.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\mHack HokerUnion\honkerunion\Marlabs.Tool.Data\obj\Debug\Marlabs.Tool.Data.dll
+D:\mHack HokerUnion\honkerunion\Marlabs.Tool.Data\obj\Debug\Marlabs.Tool.Data.pdb

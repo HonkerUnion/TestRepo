@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Marlabs.Tool.Data</RootNamespace>
     <AssemblyName>Marlabs.Tool.Data</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -52,18 +53,50 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="GenericRepository\GenericRepository.cs" />
+    <Compile Include="ModelDBContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDBContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDBContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDBContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDBContext.edmx</DependentUpon>
+    </Compile>
     <Compile Include="product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReportServerTempDBEntities.cs" />
     <Compile Include="UnitOfWork\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="ModelDBContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelDBContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ModelDBContext.edmx.diagram">
+      <DependentUpon>ModelDBContext.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="ModelDBContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelDBContext.edmx</DependentUpon>
+      <LastGenOutput>ModelDBContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelDBContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelDBContext.edmx</DependentUpon>
+      <LastGenOutput>ModelDBContext.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
