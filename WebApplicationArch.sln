@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationArch", "WebApplicationArch\WebApplicationArch.csproj", "{9417B74C-F7D7-4DC8-AFB4-60F49CB48627}"
 EndProject
@@ -10,6 +10,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessEntity", "BusinessEntity\BusinessEntity.csproj", "{00DF8B87-E33D-4028-A8D7-A98766DFCDC1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marlabs.Tool.Business.Core", "Marlabs.Tool.Business.Core\Marlabs.Tool.Business.Core.csproj", "{D78CBC29-8BD9-419E-88D2-AC35D80D79A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication", "WebApplication\WebApplication.csproj", "{17592907-6851-4FAC-BC28-31E891E810A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication.Tests", "WebApplication.Tests\WebApplication.Tests.csproj", "{85EFBAFC-DA29-4103-AFD9-4789699A4332}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{D78CBC29-8BD9-419E-88D2-AC35D80D79A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D78CBC29-8BD9-419E-88D2-AC35D80D79A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D78CBC29-8BD9-419E-88D2-AC35D80D79A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17592907-6851-4FAC-BC28-31E891E810A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17592907-6851-4FAC-BC28-31E891E810A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17592907-6851-4FAC-BC28-31E891E810A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17592907-6851-4FAC-BC28-31E891E810A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85EFBAFC-DA29-4103-AFD9-4789699A4332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85EFBAFC-DA29-4103-AFD9-4789699A4332}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85EFBAFC-DA29-4103-AFD9-4789699A4332}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85EFBAFC-DA29-4103-AFD9-4789699A4332}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
