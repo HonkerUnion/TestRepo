@@ -365,3 +365,5 @@ D:\TestRepo\WebApplicationArch\bin\EntityFramework.xml
 D:\TestRepo\WebApplicationArch\obj\Debug\WebApplicationArch.csprojResolveAssemblyReference.cache
 D:\TestRepo\WebApplicationArch\obj\Debug\WebApplicationArch.dll
 D:\TestRepo\WebApplicationArch\obj\Debug\WebApplicationArch.pdb
+D:\TestRepo\WebApplicationArch\bin\Swashbuckle.Core.dll
+D:\TestRepo\WebApplicationArch\bin\WebActivatorEx.dll
