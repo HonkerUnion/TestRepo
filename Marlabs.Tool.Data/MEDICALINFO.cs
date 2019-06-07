@@ -36,6 +36,8 @@ public partial class MEDICALINFO
 
     public Nullable<System.DateTime> UPDATEDON { get; set; }
 
+    public Nullable<int> USERID { get; set; }
+
 
 
     public virtual USERINFORMATION USERINFORMATION { get; set; }

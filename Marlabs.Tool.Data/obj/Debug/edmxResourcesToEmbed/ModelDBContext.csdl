@@ -1,4 +1,217 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="HonkerUnionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityContainer Name="HonkerUnionEntities" annotation:LazyLoadingEnabled="true" />
+  <EntityContainer Name="HonkerUnionEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AMBULATORYSERVICEs" EntityType="HonkerUnionModel.AMBULATORYSERVICE" />
+    <EntitySet Name="MEDICALINFOes" EntityType="HonkerUnionModel.MEDICALINFO" />
+    <EntitySet Name="PROVIDERINFOes" EntityType="HonkerUnionModel.PROVIDERINFO" />
+    <EntitySet Name="USERINFORMATIONs" EntityType="HonkerUnionModel.USERINFORMATION" />
+    <EntitySet Name="USERLOGINs" EntityType="HonkerUnionModel.USERLOGIN" />
+    <EntitySet Name="CASEMANAGERINFOes" EntityType="HonkerUnionModel.CASEMANAGERINFO" />
+    <EntitySet Name="DRUGCENTREs" EntityType="HonkerUnionModel.DRUGCENTRE" />
+    <EntitySet Name="PHYSICIANINFOes" EntityType="HonkerUnionModel.PHYSICIANINFO" />
+    <EntitySet Name="PUSHNOTIFICATIONs" EntityType="HonkerUnionModel.PUSHNOTIFICATION" />
+    <AssociationSet Name="FK__MEDICALIN__USERI__4F7CD00D" Association="HonkerUnionModel.FK__MEDICALIN__USERI__4F7CD00D">
+      <End Role="USERINFORMATION" EntitySet="USERINFORMATIONs" />
+      <End Role="MEDICALINFO" EntitySet="MEDICALINFOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__USERINFOR__USERI__4CA06362" Association="HonkerUnionModel.FK__USERINFOR__USERI__4CA06362">
+      <End Role="USERLOGIN" EntitySet="USERLOGINs" />
+      <End Role="USERINFORMATION" EntitySet="USERINFORMATIONs" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AMBULATORYSERVICE">
+    <Key>
+      <PropertyRef Name="AMBULATORYID" />
+    </Key>
+    <Property Name="AMBULATORYID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AMBULATORYSERVICENAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AMBULATORYTYPE" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="AMBULATORYADD1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AMBULATORYADD2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AMBULATORYCITY" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="AMBULATORYSTATE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="AMBULATORYZIP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="AMBULATORYTELEPHONE" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="LATITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="LONGITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="CREATEDON" Type="DateTime" Precision="3" />
+    <Property Name="UPDATEDON" Type="DateTime" Precision="3" />
+    <Property Name="USERID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="MEDICALINFO">
+    <Key>
+      <PropertyRef Name="MEDICALINFOID" />
+    </Key>
+    <Property Name="MEDICALINFOID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BLOODGROUP" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="ALLERGY" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ALLERGYINFO" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="MEDICALHISTORY" Type="String" MaxLength="2500" FixedLength="false" Unicode="false" />
+    <Property Name="CURRENTHEALTHISSUE" Type="String" MaxLength="2500" FixedLength="false" Unicode="false" />
+    <Property Name="USERINFORMATIONID" Type="Int32" />
+    <Property Name="CREATEDON" Type="DateTime" Precision="3" />
+    <Property Name="UPDATEDON" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="USERINFORMATION" Relationship="HonkerUnionModel.FK__MEDICALIN__USERI__4F7CD00D" FromRole="MEDICALINFO" ToRole="USERINFORMATION" />
+    <Property Name="USERID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PROVIDERINFO">
+    <Key>
+      <PropertyRef Name="PROVIDERNO" />
+    </Key>
+    <Property Name="PROVIDERNO" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="USERID" Type="Int32" />
+    <Property Name="TREATMENTTYPE" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="PROVIDERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PRACTICEADD1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PRACTICEADD2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PRACTICECITY" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="PRACTICESTATE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="PRACTICEZIP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="TELEPHONE" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="LICENCENUMBER" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="SPECIALISTTYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="LATITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="LONGITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="USERINFORMATION">
+    <Key>
+      <PropertyRef Name="USERINFORMATIONID" />
+    </Key>
+    <Property Name="USERINFORMATIONID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERID" Type="Int32" Nullable="false" />
+    <Property Name="USERFIRSTNAME" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="USERMIDLEINITIAL" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="USERLASTNAME" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="AGE" Type="Int32" />
+    <Property Name="GENDER" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PRIMARYCONTACTNO" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="ALTERNATECONTACTNO" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CITY" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="STATE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ZIP" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="LATITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="LONGITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="CREATEDON" Type="DateTime" Precision="3" />
+    <Property Name="UPDATEDON" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="MEDICALINFOes" Relationship="HonkerUnionModel.FK__MEDICALIN__USERI__4F7CD00D" FromRole="USERINFORMATION" ToRole="MEDICALINFO" />
+    <NavigationProperty Name="USERLOGIN" Relationship="HonkerUnionModel.FK__USERINFOR__USERI__4CA06362" FromRole="USERINFORMATION" ToRole="USERLOGIN" />
+  </EntityType>
+  <EntityType Name="USERLOGIN">
+    <Key>
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="USERID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERNAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USERPASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USERMOBILENO" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="USERMAILID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USERROLE" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="CREATEDON" Type="DateTime" Precision="3" />
+    <Property Name="UPDATEDON" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="USERINFORMATIONs" Relationship="HonkerUnionModel.FK__USERINFOR__USERI__4CA06362" FromRole="USERLOGIN" ToRole="USERINFORMATION" />
+  </EntityType>
+  <EntityType Name="CASEMANAGERINFO">
+    <Key>
+      <PropertyRef Name="CASEMANAGERID" />
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="CASEMANAGERID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERID" Type="Int32" Nullable="false" />
+    <Property Name="CASEMANAGERFIRSTNAME" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="CASEMANAGERMIDLEINITIAL" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="CASEMANAGERLASTNAME" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="CASEMANAGERLISENCE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PRACTICECITY" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="PRACTICESTATE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="PRACTICEZIP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="TELEPHONE" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="LATITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="LONGITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DRUGCENTRE">
+    <Key>
+      <PropertyRef Name="DRUGCENTREID" />
+    </Key>
+    <Property Name="DRUGCENTREID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DRUGCENTRENAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DRUGCENTRECONTACTNO" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="DRUGCENTRECITY" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="DRUGCENTRESTATE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="DRUGCENTREZIP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DRUGCENTRELICENS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LATITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="LONGITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="CREATEDON" Type="DateTime" Precision="3" />
+    <Property Name="UPDATEDON" Type="DateTime" Precision="3" />
+    <Property Name="USERID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PHYSICIANINFO">
+    <Key>
+      <PropertyRef Name="PHYSICIANID" />
+    </Key>
+    <Property Name="PHYSICIANID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERID" Type="Int32" />
+    <Property Name="FIRSTNAME" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="MIDLEINITIAL" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="LASTNAME" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="LISENCE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ISPRIMARYPHYSICIAN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ISSURGON" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TREATMENTTYPESPECIALIST" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="PRACTICECITY" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="PRACTICESTATE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="PRACTICEZIP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="TELEPHONE" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="LATITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="LONGITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PUSHNOTIFICATION">
+    <Key>
+      <PropertyRef Name="NOTIFICATIONID" />
+    </Key>
+    <Property Name="NOTIFICATIONID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERID" Type="Int32" />
+    <Property Name="USERINFORMATIONID" Type="Int32" />
+    <Property Name="TREATMENTTYPE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="NOTIFICATIONTEXT" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="PROVIDERNO" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="PHYSICIANID" Type="Int32" />
+    <Property Name="AMBULATORYID" Type="Int32" />
+    <Property Name="CASEMANAGERID" Type="Int32" />
+    <Property Name="DRUGCENTREID" Type="Int32" />
+    <Property Name="PROVIDERCONFIRMSTATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PHYSICIANCONFIRMSTATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AMBULATORYCONFIRMSTATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CASEMANAGERCONFIRMSTATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DRUGCENTRECONFIRMSTATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LATITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="LONGITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="CREATEDON" Type="DateTime" Precision="3" />
+    <Property Name="UPDATEDON" Type="DateTime" Precision="3" />
+  </EntityType>
+  <Association Name="FK__MEDICALIN__USERI__4F7CD00D">
+    <End Type="HonkerUnionModel.USERINFORMATION" Role="USERINFORMATION" Multiplicity="0..1" />
+    <End Type="HonkerUnionModel.MEDICALINFO" Role="MEDICALINFO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USERINFORMATION">
+        <PropertyRef Name="USERINFORMATIONID" />
+      </Principal>
+      <Dependent Role="MEDICALINFO">
+        <PropertyRef Name="USERINFORMATIONID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__USERINFOR__USERI__4CA06362">
+    <End Type="HonkerUnionModel.USERLOGIN" Role="USERLOGIN" Multiplicity="1" />
+    <End Type="HonkerUnionModel.USERINFORMATION" Role="USERINFORMATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USERLOGIN">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="USERINFORMATION">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
