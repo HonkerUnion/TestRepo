@@ -4,7 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="477f9e377e844303b8cc78fdbab919d2" Name="Diagram1" />
+      <Diagram DiagramId="477f9e377e844303b8cc78fdbab919d2" Name="Diagram1" >
+        <EntityTypeShape EntityType="HonkerUnionModel.AMBULATORYSERVICE" Width="1.5" PointX="5.75" PointY="5.75" />
+        <EntityTypeShape EntityType="HonkerUnionModel.MEDICALINFO" Width="1.5" PointX="5.25" PointY="1.875" />
+        <EntityTypeShape EntityType="HonkerUnionModel.PROVIDERINFO" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="HonkerUnionModel.USERINFORMATION" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="HonkerUnionModel.USERLOGIN" Width="1.5" PointX="0.75" PointY="2" />
+        <EntityTypeShape EntityType="HonkerUnionModel.CASEMANAGERINFO" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="HonkerUnionModel.DRUGCENTRE" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HonkerUnionModel.PUSHNOTIFICATION" Width="1.5" PointX="7.75" PointY="4.75" />
+        <AssociationConnector Association="HonkerUnionModel.FK__MEDICALIN__USERI__4F7CD00D" />
+        <AssociationConnector Association="HonkerUnionModel.FK__USERINFOR__USERI__4CA06362" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
