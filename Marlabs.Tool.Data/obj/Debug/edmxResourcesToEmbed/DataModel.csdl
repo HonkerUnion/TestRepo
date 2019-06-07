@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ReportServerTempDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ChunkData">
+    <Key>
+      <PropertyRef Name="ChunkID" />
+    </Key>
+    <Property Name="ChunkID" Type="Guid" Nullable="false" />
+    <Property Name="SnapshotDataID" Type="Guid" Nullable="false" />
+    <Property Name="ChunkFlags" Type="Byte" />
+    <Property Name="ChunkName" Type="String" MaxLength="260" FixedLength="false" Unicode="true" />
+    <Property Name="ChunkType" Type="Int32" />
+    <Property Name="Version" Type="Int16" />
+    <Property Name="MimeType" Type="String" MaxLength="260" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="ChunkSegmentMapping">
+    <Key>
+      <PropertyRef Name="ChunkId" />
+      <PropertyRef Name="SegmentId" />
+    </Key>
+    <Property Name="ChunkId" Type="Guid" Nullable="false" />
+    <Property Name="SegmentId" Type="Guid" Nullable="false" />
+    <Property Name="StartByte" Type="Int64" Nullable="false" />
+    <Property Name="LogicalByteCount" Type="Int32" Nullable="false" />
+    <Property Name="ActualByteCount" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DBUpgradeHistory">
+    <Key>
+      <PropertyRef Name="UpgradeID" />
+    </Key>
+    <Property Name="UpgradeID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DbVersion" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="User" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="DateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ExecutionCache">
+    <Key>
+      <PropertyRef Name="ExecutionCacheID" />
+    </Key>
+    <Property Name="ExecutionCacheID" Type="Guid" Nullable="false" />
+    <Property Name="ReportID" Type="Guid" Nullable="false" />
+    <Property Name="ExpirationFlags" Type="Int32" Nullable="false" />
+    <Property Name="AbsoluteExpiration" Type="DateTime" Precision="3" />
+    <Property Name="RelativeExpiration" Type="Int32" />
+    <Property Name="SnapshotDataID" Type="Guid" Nullable="false" />
+    <Property Name="LastUsedTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ParamsHash" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PersistedStream">
+    <Key>
+      <PropertyRef Name="SessionID" />
+      <PropertyRef Name="Index" />
+    </Key>
+    <Property Name="SessionID" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Index" Type="Int32" Nullable="false" />
+    <Property Name="Content" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Name" Type="String" MaxLength="260" FixedLength="false" Unicode="true" />
+    <Property Name="MimeType" Type="String" MaxLength="260" FixedLength="false" Unicode="true" />
+    <Property Name="Extension" Type="String" MaxLength="260" FixedLength="false" Unicode="true" />
+    <Property Name="Encoding" Type="String" MaxLength="260" FixedLength="false" Unicode="true" />
+    <Property Name="Error" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="RefCount" Type="Int32" Nullable="false" />
+    <Property Name="ExpirationDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Segment">
+    <Key>
+      <PropertyRef Name="SegmentId" />
+    </Key>
+    <Property Name="SegmentId" Type="Guid" Nullable="false" />
+    <Property Name="Content" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="SegmentedChunk">
+    <Key>
+      <PropertyRef Name="SegmentedChunkId" />
+    </Key>
+    <Property Name="ChunkId" Type="Guid" Nullable="false" />
+    <Property Name="SnapshotDataId" Type="Guid" Nullable="false" />
+    <Property Name="ChunkFlags" Type="Byte" Nullable="false" />
+    <Property Name="ChunkName" Type="String" MaxLength="260" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ChunkType" Type="Int32" Nullable="false" />
+    <Property Name="Version" Type="Int16" Nullable="false" />
+    <Property Name="MimeType" Type="String" MaxLength="260" FixedLength="false" Unicode="true" />
+    <Property Name="Machine" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SegmentedChunkId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="TempCatalog">
+    <Key>
+      <PropertyRef Name="EditSessionID" />
+      <PropertyRef Name="ContextPath" />
+    </Key>
+    <Property Name="EditSessionID" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TempCatalogID" Type="Guid" Nullable="false" />
+    <Property Name="ContextPath" Type="String" MaxLength="425" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="425" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Content" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Intermediate" Type="Guid" />
+    <Property Name="IntermediateIsPermanent" Type="Boolean" Nullable="false" />
+    <Property Name="Property" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Parameter" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OwnerID" Type="Guid" Nullable="false" />
+    <Property Name="CreationTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ExpirationTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DataCacheHash" Type="Binary" MaxLength="64" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TempDataSet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="ItemID" Type="Guid" Nullable="false" />
+    <Property Name="LinkID" Type="Guid" />
+    <Property Name="Name" Type="String" MaxLength="260" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TempDataSource">
+    <Key>
+      <PropertyRef Name="DSID" />
+    </Key>
+    <Property Name="DSID" Type="Guid" Nullable="false" />
+    <Property Name="ItemID" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="260" FixedLength="false" Unicode="true" />
+    <Property Name="Extension" Type="String" MaxLength="260" FixedLength="false" Unicode="true" />
+    <Property Name="Link" Type="Guid" />
+    <Property Name="CredentialRetrieval" Type="Int32" />
+    <Property Name="Prompt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ConnectionString" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="OriginalConnectionString" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="OriginalConnectStringExpressionBased" Type="Boolean" />
+    <Property Name="UserName" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Password" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Flags" Type="Int32" />
+    <Property Name="Version" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SessionData">
+    <Key>
+      <PropertyRef Name="SessionID" />
+      <PropertyRef Name="Timeout" />
+      <PropertyRef Name="Expiration" />
+      <PropertyRef Name="OwnerID" />
+      <PropertyRef Name="CreationTime" />
+      <PropertyRef Name="SiteZone" />
+    </Key>
+    <Property Name="SessionID" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CompiledDefinition" Type="Guid" />
+    <Property Name="SnapshotDataID" Type="Guid" />
+    <Property Name="IsPermanentSnapshot" Type="Boolean" />
+    <Property Name="ReportPath" Type="String" MaxLength="464" FixedLength="false" Unicode="true" />
+    <Property Name="Timeout" Type="Int32" Nullable="false" />
+    <Property Name="AutoRefreshSeconds" Type="Int32" />
+    <Property Name="Expiration" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ShowHideInfo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="DataSourceInfo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="OwnerID" Type="Guid" Nullable="false" />
+    <Property Name="EffectiveParams" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreationTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="HasInteractivity" Type="Boolean" />
+    <Property Name="SnapshotExpirationDate" Type="DateTime" Precision="3" />
+    <Property Name="HistoryDate" Type="DateTime" Precision="3" />
+    <Property Name="PageHeight" Type="Double" />
+    <Property Name="PageWidth" Type="Double" />
+    <Property Name="TopMargin" Type="Double" />
+    <Property Name="BottomMargin" Type="Double" />
+    <Property Name="LeftMargin" Type="Double" />
+    <Property Name="RightMargin" Type="Double" />
+    <Property Name="AwaitingFirstExecution" Type="Boolean" />
+    <Property Name="EditSessionID" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="DataSetInfo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="SitePath" Type="String" MaxLength="440" FixedLength="false" Unicode="true" />
+    <Property Name="SiteZone" Type="Int32" Nullable="false" />
+    <Property Name="ReportDefinitionPath" Type="String" MaxLength="464" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SessionLock">
+    <Key>
+      <PropertyRef Name="SessionID" />
+      <PropertyRef Name="LockVersion" />
+    </Key>
+    <Property Name="SessionID" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LockVersion" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SnapshotData">
+    <Key>
+      <PropertyRef Name="SnapshotDataID" />
+      <PropertyRef Name="CreatedDate" />
+      <PropertyRef Name="PermanentRefcount" />
+      <PropertyRef Name="TransientRefcount" />
+      <PropertyRef Name="ExpirationDate" />
+      <PropertyRef Name="Machine" />
+    </Key>
+    <Property Name="SnapshotDataID" Type="Guid" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ParamsHash" Type="Int32" />
+    <Property Name="QueryParams" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EffectiveParams" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="DependsOnUser" Type="Boolean" />
+    <Property Name="PermanentRefcount" Type="Int32" Nullable="false" />
+    <Property Name="TransientRefcount" Type="Int32" Nullable="false" />
+    <Property Name="ExpirationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PageCount" Type="Int32" />
+    <Property Name="HasDocMap" Type="Boolean" />
+    <Property Name="Machine" Type="String" MaxLength="512" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PaginationMode" Type="Int16" />
+    <Property Name="ProcessingFlags" Type="Int32" />
+    <Property Name="IsCached" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="ReportServerTempDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ChunkDatas" EntityType="Self.ChunkData" />
+    <EntitySet Name="ChunkSegmentMappings" EntityType="Self.ChunkSegmentMapping" />
+    <EntitySet Name="DBUpgradeHistories" EntityType="Self.DBUpgradeHistory" />
+    <EntitySet Name="ExecutionCaches" EntityType="Self.ExecutionCache" />
+    <EntitySet Name="PersistedStreams" EntityType="Self.PersistedStream" />
+    <EntitySet Name="Segments" EntityType="Self.Segment" />
+    <EntitySet Name="SegmentedChunks" EntityType="Self.SegmentedChunk" />
+    <EntitySet Name="TempCatalogs" EntityType="Self.TempCatalog" />
+    <EntitySet Name="TempDataSets" EntityType="Self.TempDataSet" />
+    <EntitySet Name="TempDataSources" EntityType="Self.TempDataSource" />
+    <EntitySet Name="SessionDatas" EntityType="Self.SessionData" />
+    <EntitySet Name="SessionLocks" EntityType="Self.SessionLock" />
+    <EntitySet Name="SnapshotDatas" EntityType="Self.SnapshotData" />
+  </EntityContainer>
+</Schema>

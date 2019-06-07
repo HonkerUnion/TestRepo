@@ -1,0 +1,12 @@
+C:\Users\Kamal.Kumar\source\repos\WebApplicationArch\Marlabs.Tool.Data\bin\Debug\Marlabs.Tool.Data.dll.config
+C:\Users\Kamal.Kumar\source\repos\WebApplicationArch\Marlabs.Tool.Data\bin\Debug\Marlabs.Tool.Data.dll
+C:\Users\Kamal.Kumar\source\repos\WebApplicationArch\Marlabs.Tool.Data\bin\Debug\Marlabs.Tool.Data.pdb
+C:\Users\Kamal.Kumar\source\repos\WebApplicationArch\Marlabs.Tool.Data\bin\Debug\EntityFramework.dll
+C:\Users\Kamal.Kumar\source\repos\WebApplicationArch\Marlabs.Tool.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Kamal.Kumar\source\repos\WebApplicationArch\Marlabs.Tool.Data\bin\Debug\EntityFramework.xml
+C:\Users\Kamal.Kumar\source\repos\WebApplicationArch\Marlabs.Tool.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Kamal.Kumar\source\repos\WebApplicationArch\Marlabs.Tool.Data\obj\Debug\Marlabs.Tool.Data.csprojAssemblyReference.cache
+C:\Users\Kamal.Kumar\source\repos\WebApplicationArch\Marlabs.Tool.Data\obj\Debug\Marlabs.Tool.Data.csproj.CoreCompileInputs.cache
+C:\Users\Kamal.Kumar\source\repos\WebApplicationArch\Marlabs.Tool.Data\obj\Debug\Marlabs.Tool.Data.csproj.CopyComplete
+C:\Users\Kamal.Kumar\source\repos\WebApplicationArch\Marlabs.Tool.Data\obj\Debug\Marlabs.Tool.Data.dll
+C:\Users\Kamal.Kumar\source\repos\WebApplicationArch\Marlabs.Tool.Data\obj\Debug\Marlabs.Tool.Data.pdb
