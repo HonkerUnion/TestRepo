@@ -4,20 +4,704 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="HonkerUnionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityContainer Name="HonkerUnionModelStoreContainer" />
-      </Schema>
-    </edmx:StorageModels>
+    <Schema Namespace="HonkerUnionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AMBULATORYSERVICE">
+          <Key>
+            <PropertyRef Name="AMBULATORYID" />
+          </Key>
+          <Property Name="AMBULATORYID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AMBULATORYSERVICENAME" Type="varchar" MaxLength="50" />
+          <Property Name="AMBULATORYTYPE" Type="char" MaxLength="2" />
+          <Property Name="AMBULATORYADD1" Type="varchar" MaxLength="50" />
+          <Property Name="AMBULATORYADD2" Type="varchar" MaxLength="50" />
+          <Property Name="AMBULATORYCITY" Type="varchar" MaxLength="25" />
+          <Property Name="AMBULATORYSTATE" Type="varchar" MaxLength="25" />
+          <Property Name="AMBULATORYZIP" Type="varchar" MaxLength="15" />
+          <Property Name="AMBULATORYTELEPHONE" Type="varchar" MaxLength="13" />
+          <Property Name="LATITUDE" Type="varchar" MaxLength="9" />
+          <Property Name="LONGITUDE" Type="varchar" MaxLength="9" />
+          <Property Name="CREATEDON" Type="datetime" />
+          <Property Name="UPDATEDON" Type="datetime" />
+          <Property Name="USERID" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'HonkerUnion.dbo.AMBULATORYTYPE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="AMBULATORYTYPE">
+          <Property Name="AMBULATORYTYPEID" Type="varchar" MaxLength="2" />
+          <Property Name="AMBULATORYTYPERDESC" Type="varchar" MaxLength="35" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'HonkerUnion.dbo.CASEMANAGERINFO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="CASEMANAGERINFO">
+          <Key>
+            <PropertyRef Name="CASEMANAGERID" />
+            <PropertyRef Name="USERID" />
+          </Key>
+          <Property Name="CASEMANAGERID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERID" Type="int" Nullable="false" />
+          <Property Name="CASEMANAGERFIRSTNAME" Type="varchar" MaxLength="35" />
+          <Property Name="CASEMANAGERMIDLEINITIAL" Type="varchar" MaxLength="3" />
+          <Property Name="CASEMANAGERLASTNAME" Type="varchar" MaxLength="35" />
+          <Property Name="CASEMANAGERLISENCE" Type="varchar" MaxLength="100" />
+          <Property Name="PRACTICECITY" Type="varchar" MaxLength="25" />
+          <Property Name="PRACTICESTATE" Type="varchar" MaxLength="25" />
+          <Property Name="PRACTICEZIP" Type="varchar" MaxLength="15" />
+          <Property Name="TELEPHONE" Type="varchar" MaxLength="13" />
+          <Property Name="LATITUDE" Type="varchar" MaxLength="9" />
+          <Property Name="LONGITUDE" Type="varchar" MaxLength="9" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'HonkerUnion.dbo.DRUGCENTRE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DRUGCENTRE">
+          <Key>
+            <PropertyRef Name="DRUGCENTREID" />
+          </Key>
+          <Property Name="DRUGCENTREID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DRUGCENTRENAME" Type="varchar" MaxLength="50" />
+          <Property Name="DRUGCENTRECONTACTNO" Type="varchar" MaxLength="13" />
+          <Property Name="DRUGCENTRECITY" Type="varchar" MaxLength="25" />
+          <Property Name="DRUGCENTRESTATE" Type="varchar" MaxLength="25" />
+          <Property Name="DRUGCENTREZIP" Type="varchar" MaxLength="15" />
+          <Property Name="DRUGCENTRELICENS" Type="varchar" MaxLength="100" />
+          <Property Name="LATITUDE" Type="varchar" MaxLength="9" />
+          <Property Name="LONGITUDE" Type="varchar" MaxLength="9" />
+          <Property Name="CREATEDON" Type="datetime" />
+          <Property Name="UPDATEDON" Type="datetime" />
+          <Property Name="USERID" Type="int" />
+        </EntityType>
+        <EntityType Name="MEDICALINFO">
+          <Key>
+            <PropertyRef Name="MEDICALINFOID" />
+          </Key>
+          <Property Name="MEDICALINFOID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BLOODGROUP" Type="varchar" MaxLength="5" />
+          <Property Name="ALLERGY" Type="char" MaxLength="1" />
+          <Property Name="ALLERGYINFO" Type="varchar" MaxLength="500" />
+          <Property Name="MEDICALHISTORY" Type="varchar" MaxLength="2500" />
+          <Property Name="CURRENTHEALTHISSUE" Type="varchar" MaxLength="2500" />
+          <Property Name="USERINFORMATIONID" Type="int" />
+          <Property Name="CREATEDON" Type="datetime" />
+          <Property Name="UPDATEDON" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'HonkerUnion.dbo.PHYSICIANINFO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PHYSICIANINFO">
+          <Key>
+            <PropertyRef Name="PHYSICIANID" />
+          </Key>
+          <Property Name="PHYSICIANID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERID" Type="int" />
+          <Property Name="FIRSTNAME" Type="varchar" MaxLength="35" />
+          <Property Name="MIDLEINITIAL" Type="varchar" MaxLength="3" />
+          <Property Name="LASTNAME" Type="varchar" MaxLength="35" />
+          <Property Name="LISENCE" Type="varchar" MaxLength="100" />
+          <Property Name="ISPRIMARYPHYSICIAN" Type="char" MaxLength="1" />
+          <Property Name="ISSURGON" Type="char" MaxLength="1" />
+          <Property Name="TREATMENTTYPESPECIALIST" Type="varchar" MaxLength="25" />
+          <Property Name="PRACTICECITY" Type="varchar" MaxLength="25" />
+          <Property Name="PRACTICESTATE" Type="varchar" MaxLength="25" />
+          <Property Name="PRACTICEZIP" Type="varchar" MaxLength="15" />
+          <Property Name="TELEPHONE" Type="varchar" MaxLength="13" />
+          <Property Name="LATITUDE" Type="varchar" MaxLength="9" />
+          <Property Name="LONGITUDE" Type="varchar" MaxLength="9" />
+        </EntityType>
+        <EntityType Name="PROVIDERINFO">
+          <Key>
+            <PropertyRef Name="PROVIDERNO" />
+          </Key>
+          <Property Name="PROVIDERNO" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="USERID" Type="int" />
+          <Property Name="TREATMENTTYPE" Type="char" MaxLength="2" />
+          <Property Name="PROVIDERNAME" Type="varchar" MaxLength="50" />
+          <Property Name="PRACTICEADD1" Type="varchar" MaxLength="50" />
+          <Property Name="PRACTICEADD2" Type="varchar" MaxLength="50" />
+          <Property Name="PRACTICECITY" Type="varchar" MaxLength="25" />
+          <Property Name="PRACTICESTATE" Type="varchar" MaxLength="25" />
+          <Property Name="PRACTICEZIP" Type="varchar" MaxLength="15" />
+          <Property Name="TELEPHONE" Type="varchar" MaxLength="13" />
+          <Property Name="LICENCENUMBER" Type="varchar" MaxLength="30" />
+          <Property Name="SPECIALISTTYPE" Type="varchar" MaxLength="25" />
+          <Property Name="LATITUDE" Type="varchar" MaxLength="9" />
+          <Property Name="LONGITUDE" Type="varchar" MaxLength="9" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'HonkerUnion.dbo.PUSHNOTIFICATION' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PUSHNOTIFICATION">
+          <Key>
+            <PropertyRef Name="NOTIFICATIONID" />
+          </Key>
+          <Property Name="NOTIFICATIONID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERID" Type="int" />
+          <Property Name="USERINFORMATIONID" Type="int" />
+          <Property Name="TREATMENTTYPE" Type="varchar" MaxLength="2" />
+          <Property Name="NOTIFICATIONTEXT" Type="varchar" MaxLength="250" />
+          <Property Name="PROVIDERNO" Type="varchar" MaxLength="11" />
+          <Property Name="PHYSICIANID" Type="int" />
+          <Property Name="AMBULATORYID" Type="int" />
+          <Property Name="CASEMANAGERID" Type="int" />
+          <Property Name="DRUGCENTREID" Type="int" />
+          <Property Name="PROVIDERCONFIRMSTATUS" Type="char" MaxLength="1" />
+          <Property Name="PHYSICIANCONFIRMSTATUS" Type="char" MaxLength="1" />
+          <Property Name="AMBULATORYCONFIRMSTATUS" Type="char" MaxLength="1" />
+          <Property Name="CASEMANAGERCONFIRMSTATUS" Type="char" MaxLength="1" />
+          <Property Name="DRUGCENTRECONFIRMSTATUS" Type="char" MaxLength="1" />
+          <Property Name="LATITUDE" Type="varchar" MaxLength="9" />
+          <Property Name="LONGITUDE" Type="varchar" MaxLength="9" />
+          <Property Name="CREATEDON" Type="datetime" />
+          <Property Name="UPDATEDON" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'HonkerUnion.dbo.TREATMENTINFO' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TREATMENTINFO">
+          <Property Name="TREATMENTTYPE" Type="varchar" MaxLength="2" />
+          <Property Name="PROVIDERDESC" Type="varchar" MaxLength="35" />
+        </EntityType>-->
+        <EntityType Name="USERINFORMATION">
+          <Key>
+            <PropertyRef Name="USERINFORMATIONID" />
+          </Key>
+          <Property Name="USERINFORMATIONID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERID" Type="int" Nullable="false" />
+          <Property Name="USERFIRSTNAME" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="USERMIDLEINITIAL" Type="varchar" MaxLength="3" />
+          <Property Name="USERLASTNAME" Type="varchar" MaxLength="35" />
+          <Property Name="AGE" Type="int" />
+          <Property Name="GENDER" Type="char" MaxLength="1" />
+          <Property Name="PRIMARYCONTACTNO" Type="varchar" MaxLength="13" />
+          <Property Name="ALTERNATECONTACTNO" Type="varchar" MaxLength="13" />
+          <Property Name="ADDRESS" Type="varchar" MaxLength="50" />
+          <Property Name="CITY" Type="varchar" MaxLength="30" />
+          <Property Name="STATE" Type="varchar" MaxLength="30" />
+          <Property Name="ZIP" Type="varchar" MaxLength="13" />
+          <Property Name="LATITUDE" Type="varchar" MaxLength="9" />
+          <Property Name="LONGITUDE" Type="varchar" MaxLength="9" />
+          <Property Name="CREATEDON" Type="datetime" />
+          <Property Name="UPDATEDON" Type="datetime" />
+        </EntityType>
+        <EntityType Name="USERLOGIN">
+          <Key>
+            <PropertyRef Name="USERID" />
+          </Key>
+          <Property Name="USERID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERNAME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="USERPASSWORD" Type="varchar" MaxLength="50" />
+          <Property Name="USERMOBILENO" Type="varchar" MaxLength="13" />
+          <Property Name="USERMAILID" Type="varchar" MaxLength="50" />
+          <Property Name="USERROLE" Type="char" MaxLength="3" />
+          <Property Name="CREATEDON" Type="datetime" />
+          <Property Name="UPDATEDON" Type="datetime" />
+        </EntityType>
+        <Association Name="FK__MEDICALIN__USERI__4F7CD00D">
+          <End Role="USERINFORMATION" Type="Self.USERINFORMATION" Multiplicity="0..1" />
+          <End Role="MEDICALINFO" Type="Self.MEDICALINFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USERINFORMATION">
+              <PropertyRef Name="USERINFORMATIONID" />
+            </Principal>
+            <Dependent Role="MEDICALINFO">
+              <PropertyRef Name="USERINFORMATIONID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__USERINFOR__USERI__4CA06362">
+          <End Role="USERLOGIN" Type="Self.USERLOGIN" Multiplicity="1" />
+          <End Role="USERINFORMATION" Type="Self.USERINFORMATION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USERLOGIN">
+              <PropertyRef Name="USERID" />
+            </Principal>
+            <Dependent Role="USERINFORMATION">
+              <PropertyRef Name="USERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HonkerUnionModelStoreContainer">
+          <EntitySet Name="AMBULATORYSERVICE" EntityType="Self.AMBULATORYSERVICE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MEDICALINFO" EntityType="Self.MEDICALINFO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PROVIDERINFO" EntityType="Self.PROVIDERINFO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USERINFORMATION" EntityType="Self.USERINFORMATION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USERLOGIN" EntityType="Self.USERLOGIN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CASEMANAGERINFO" EntityType="Self.CASEMANAGERINFO" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CASEMANAGERINFO].[CASEMANAGERID] AS [CASEMANAGERID], 
+    [CASEMANAGERINFO].[USERID] AS [USERID], 
+    [CASEMANAGERINFO].[CASEMANAGERFIRSTNAME] AS [CASEMANAGERFIRSTNAME], 
+    [CASEMANAGERINFO].[CASEMANAGERMIDLEINITIAL] AS [CASEMANAGERMIDLEINITIAL], 
+    [CASEMANAGERINFO].[CASEMANAGERLASTNAME] AS [CASEMANAGERLASTNAME], 
+    [CASEMANAGERINFO].[CASEMANAGERLISENCE] AS [CASEMANAGERLISENCE], 
+    [CASEMANAGERINFO].[PRACTICECITY] AS [PRACTICECITY], 
+    [CASEMANAGERINFO].[PRACTICESTATE] AS [PRACTICESTATE], 
+    [CASEMANAGERINFO].[PRACTICEZIP] AS [PRACTICEZIP], 
+    [CASEMANAGERINFO].[TELEPHONE] AS [TELEPHONE], 
+    [CASEMANAGERINFO].[LATITUDE] AS [LATITUDE], 
+    [CASEMANAGERINFO].[LONGITUDE] AS [LONGITUDE]
+    FROM [dbo].[CASEMANAGERINFO] AS [CASEMANAGERINFO]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DRUGCENTRE" EntityType="Self.DRUGCENTRE" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DRUGCENTRE].[DRUGCENTREID] AS [DRUGCENTREID], 
+    [DRUGCENTRE].[DRUGCENTRENAME] AS [DRUGCENTRENAME], 
+    [DRUGCENTRE].[DRUGCENTRECONTACTNO] AS [DRUGCENTRECONTACTNO], 
+    [DRUGCENTRE].[DRUGCENTRECITY] AS [DRUGCENTRECITY], 
+    [DRUGCENTRE].[DRUGCENTRESTATE] AS [DRUGCENTRESTATE], 
+    [DRUGCENTRE].[DRUGCENTREZIP] AS [DRUGCENTREZIP], 
+    [DRUGCENTRE].[DRUGCENTRELICENS] AS [DRUGCENTRELICENS], 
+    [DRUGCENTRE].[LATITUDE] AS [LATITUDE], 
+    [DRUGCENTRE].[LONGITUDE] AS [LONGITUDE], 
+    [DRUGCENTRE].[CREATEDON] AS [CREATEDON], 
+    [DRUGCENTRE].[UPDATEDON] AS [UPDATEDON], 
+    [DRUGCENTRE].[USERID] AS [USERID]
+    FROM [dbo].[DRUGCENTRE] AS [DRUGCENTRE]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PHYSICIANINFO" EntityType="Self.PHYSICIANINFO" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PHYSICIANINFO].[PHYSICIANID] AS [PHYSICIANID], 
+    [PHYSICIANINFO].[USERID] AS [USERID], 
+    [PHYSICIANINFO].[FIRSTNAME] AS [FIRSTNAME], 
+    [PHYSICIANINFO].[MIDLEINITIAL] AS [MIDLEINITIAL], 
+    [PHYSICIANINFO].[LASTNAME] AS [LASTNAME], 
+    [PHYSICIANINFO].[LISENCE] AS [LISENCE], 
+    [PHYSICIANINFO].[ISPRIMARYPHYSICIAN] AS [ISPRIMARYPHYSICIAN], 
+    [PHYSICIANINFO].[ISSURGON] AS [ISSURGON], 
+    [PHYSICIANINFO].[TREATMENTTYPESPECIALIST] AS [TREATMENTTYPESPECIALIST], 
+    [PHYSICIANINFO].[PRACTICECITY] AS [PRACTICECITY], 
+    [PHYSICIANINFO].[PRACTICESTATE] AS [PRACTICESTATE], 
+    [PHYSICIANINFO].[PRACTICEZIP] AS [PRACTICEZIP], 
+    [PHYSICIANINFO].[TELEPHONE] AS [TELEPHONE], 
+    [PHYSICIANINFO].[LATITUDE] AS [LATITUDE], 
+    [PHYSICIANINFO].[LONGITUDE] AS [LONGITUDE]
+    FROM [dbo].[PHYSICIANINFO] AS [PHYSICIANINFO]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PUSHNOTIFICATION" EntityType="Self.PUSHNOTIFICATION" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PUSHNOTIFICATION].[NOTIFICATIONID] AS [NOTIFICATIONID], 
+    [PUSHNOTIFICATION].[USERID] AS [USERID], 
+    [PUSHNOTIFICATION].[USERINFORMATIONID] AS [USERINFORMATIONID], 
+    [PUSHNOTIFICATION].[TREATMENTTYPE] AS [TREATMENTTYPE], 
+    [PUSHNOTIFICATION].[NOTIFICATIONTEXT] AS [NOTIFICATIONTEXT], 
+    [PUSHNOTIFICATION].[PROVIDERNO] AS [PROVIDERNO], 
+    [PUSHNOTIFICATION].[PHYSICIANID] AS [PHYSICIANID], 
+    [PUSHNOTIFICATION].[AMBULATORYID] AS [AMBULATORYID], 
+    [PUSHNOTIFICATION].[CASEMANAGERID] AS [CASEMANAGERID], 
+    [PUSHNOTIFICATION].[DRUGCENTREID] AS [DRUGCENTREID], 
+    [PUSHNOTIFICATION].[PROVIDERCONFIRMSTATUS] AS [PROVIDERCONFIRMSTATUS], 
+    [PUSHNOTIFICATION].[PHYSICIANCONFIRMSTATUS] AS [PHYSICIANCONFIRMSTATUS], 
+    [PUSHNOTIFICATION].[AMBULATORYCONFIRMSTATUS] AS [AMBULATORYCONFIRMSTATUS], 
+    [PUSHNOTIFICATION].[CASEMANAGERCONFIRMSTATUS] AS [CASEMANAGERCONFIRMSTATUS], 
+    [PUSHNOTIFICATION].[DRUGCENTRECONFIRMSTATUS] AS [DRUGCENTRECONFIRMSTATUS], 
+    [PUSHNOTIFICATION].[LATITUDE] AS [LATITUDE], 
+    [PUSHNOTIFICATION].[LONGITUDE] AS [LONGITUDE], 
+    [PUSHNOTIFICATION].[CREATEDON] AS [CREATEDON], 
+    [PUSHNOTIFICATION].[UPDATEDON] AS [UPDATEDON]
+    FROM [dbo].[PUSHNOTIFICATION] AS [PUSHNOTIFICATION]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__MEDICALIN__USERI__4F7CD00D" Association="Self.FK__MEDICALIN__USERI__4F7CD00D">
+            <End Role="USERINFORMATION" EntitySet="USERINFORMATION" />
+            <End Role="MEDICALINFO" EntitySet="MEDICALINFO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__USERINFOR__USERI__4CA06362" Association="Self.FK__USERINFOR__USERI__4CA06362">
+            <End Role="USERLOGIN" EntitySet="USERLOGIN" />
+            <End Role="USERINFORMATION" EntitySet="USERINFORMATION" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HonkerUnionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="HonkerUnionEntities" annotation:LazyLoadingEnabled="true" />
+        <EntityContainer Name="HonkerUnionEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="AMBULATORYSERVICEs" EntityType="HonkerUnionModel.AMBULATORYSERVICE" />
+          <EntitySet Name="MEDICALINFOes" EntityType="HonkerUnionModel.MEDICALINFO" />
+          <EntitySet Name="PROVIDERINFOes" EntityType="HonkerUnionModel.PROVIDERINFO" />
+          <EntitySet Name="USERINFORMATIONs" EntityType="HonkerUnionModel.USERINFORMATION" />
+          <EntitySet Name="USERLOGINs" EntityType="HonkerUnionModel.USERLOGIN" />
+          <EntitySet Name="CASEMANAGERINFOes" EntityType="HonkerUnionModel.CASEMANAGERINFO" />
+          <EntitySet Name="DRUGCENTREs" EntityType="HonkerUnionModel.DRUGCENTRE" />
+          <EntitySet Name="PHYSICIANINFOes" EntityType="HonkerUnionModel.PHYSICIANINFO" />
+          <EntitySet Name="PUSHNOTIFICATIONs" EntityType="HonkerUnionModel.PUSHNOTIFICATION" />
+          <AssociationSet Name="FK__MEDICALIN__USERI__4F7CD00D" Association="HonkerUnionModel.FK__MEDICALIN__USERI__4F7CD00D">
+            <End Role="USERINFORMATION" EntitySet="USERINFORMATIONs" />
+            <End Role="MEDICALINFO" EntitySet="MEDICALINFOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__USERINFOR__USERI__4CA06362" Association="HonkerUnionModel.FK__USERINFOR__USERI__4CA06362">
+            <End Role="USERLOGIN" EntitySet="USERLOGINs" />
+            <End Role="USERINFORMATION" EntitySet="USERINFORMATIONs" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AMBULATORYSERVICE">
+          <Key>
+            <PropertyRef Name="AMBULATORYID" />
+          </Key>
+          <Property Name="AMBULATORYID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AMBULATORYSERVICENAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AMBULATORYTYPE" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="AMBULATORYADD1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AMBULATORYADD2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AMBULATORYCITY" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="AMBULATORYSTATE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="AMBULATORYZIP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="AMBULATORYTELEPHONE" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="LATITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="LONGITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="CREATEDON" Type="DateTime" Precision="3" />
+          <Property Name="UPDATEDON" Type="DateTime" Precision="3" />
+          <Property Name="USERID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="MEDICALINFO">
+          <Key>
+            <PropertyRef Name="MEDICALINFOID" />
+          </Key>
+          <Property Name="MEDICALINFOID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BLOODGROUP" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="ALLERGY" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ALLERGYINFO" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="MEDICALHISTORY" Type="String" MaxLength="2500" FixedLength="false" Unicode="false" />
+          <Property Name="CURRENTHEALTHISSUE" Type="String" MaxLength="2500" FixedLength="false" Unicode="false" />
+          <Property Name="USERINFORMATIONID" Type="Int32" />
+          <Property Name="CREATEDON" Type="DateTime" Precision="3" />
+          <Property Name="UPDATEDON" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="USERINFORMATION" Relationship="HonkerUnionModel.FK__MEDICALIN__USERI__4F7CD00D" FromRole="MEDICALINFO" ToRole="USERINFORMATION" />
+        </EntityType>
+        <EntityType Name="PROVIDERINFO">
+          <Key>
+            <PropertyRef Name="PROVIDERNO" />
+          </Key>
+          <Property Name="PROVIDERNO" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="USERID" Type="Int32" />
+          <Property Name="TREATMENTTYPE" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="PROVIDERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PRACTICEADD1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PRACTICEADD2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PRACTICECITY" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="PRACTICESTATE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="PRACTICEZIP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="TELEPHONE" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="LICENCENUMBER" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SPECIALISTTYPE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="LATITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="LONGITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="USERINFORMATION">
+          <Key>
+            <PropertyRef Name="USERINFORMATIONID" />
+          </Key>
+          <Property Name="USERINFORMATIONID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERID" Type="Int32" Nullable="false" />
+          <Property Name="USERFIRSTNAME" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="USERMIDLEINITIAL" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="USERLASTNAME" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="AGE" Type="Int32" />
+          <Property Name="GENDER" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="PRIMARYCONTACTNO" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="ALTERNATECONTACTNO" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CITY" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="STATE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ZIP" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="LATITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="LONGITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="CREATEDON" Type="DateTime" Precision="3" />
+          <Property Name="UPDATEDON" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="MEDICALINFOes" Relationship="HonkerUnionModel.FK__MEDICALIN__USERI__4F7CD00D" FromRole="USERINFORMATION" ToRole="MEDICALINFO" />
+          <NavigationProperty Name="USERLOGIN" Relationship="HonkerUnionModel.FK__USERINFOR__USERI__4CA06362" FromRole="USERINFORMATION" ToRole="USERLOGIN" />
+        </EntityType>
+        <EntityType Name="USERLOGIN">
+          <Key>
+            <PropertyRef Name="USERID" />
+          </Key>
+          <Property Name="USERID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERNAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="USERPASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="USERMOBILENO" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="USERMAILID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="USERROLE" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="CREATEDON" Type="DateTime" Precision="3" />
+          <Property Name="UPDATEDON" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="USERINFORMATIONs" Relationship="HonkerUnionModel.FK__USERINFOR__USERI__4CA06362" FromRole="USERLOGIN" ToRole="USERINFORMATION" />
+        </EntityType>
+        <EntityType Name="CASEMANAGERINFO">
+          <Key>
+            <PropertyRef Name="CASEMANAGERID" />
+            <PropertyRef Name="USERID" />
+          </Key>
+          <Property Name="CASEMANAGERID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERID" Type="Int32" Nullable="false" />
+          <Property Name="CASEMANAGERFIRSTNAME" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="CASEMANAGERMIDLEINITIAL" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="CASEMANAGERLASTNAME" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="CASEMANAGERLISENCE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PRACTICECITY" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="PRACTICESTATE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="PRACTICEZIP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="TELEPHONE" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="LATITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="LONGITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="DRUGCENTRE">
+          <Key>
+            <PropertyRef Name="DRUGCENTREID" />
+          </Key>
+          <Property Name="DRUGCENTREID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DRUGCENTRENAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DRUGCENTRECONTACTNO" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="DRUGCENTRECITY" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="DRUGCENTRESTATE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="DRUGCENTREZIP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="DRUGCENTRELICENS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LATITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="LONGITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="CREATEDON" Type="DateTime" Precision="3" />
+          <Property Name="UPDATEDON" Type="DateTime" Precision="3" />
+          <Property Name="USERID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PHYSICIANINFO">
+          <Key>
+            <PropertyRef Name="PHYSICIANID" />
+          </Key>
+          <Property Name="PHYSICIANID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERID" Type="Int32" />
+          <Property Name="FIRSTNAME" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="MIDLEINITIAL" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="LASTNAME" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="LISENCE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ISPRIMARYPHYSICIAN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ISSURGON" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="TREATMENTTYPESPECIALIST" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="PRACTICECITY" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="PRACTICESTATE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="PRACTICEZIP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="TELEPHONE" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="LATITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="LONGITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PUSHNOTIFICATION">
+          <Key>
+            <PropertyRef Name="NOTIFICATIONID" />
+          </Key>
+          <Property Name="NOTIFICATIONID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERID" Type="Int32" />
+          <Property Name="USERINFORMATIONID" Type="Int32" />
+          <Property Name="TREATMENTTYPE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="NOTIFICATIONTEXT" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="PROVIDERNO" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="PHYSICIANID" Type="Int32" />
+          <Property Name="AMBULATORYID" Type="Int32" />
+          <Property Name="CASEMANAGERID" Type="Int32" />
+          <Property Name="DRUGCENTREID" Type="Int32" />
+          <Property Name="PROVIDERCONFIRMSTATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="PHYSICIANCONFIRMSTATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="AMBULATORYCONFIRMSTATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CASEMANAGERCONFIRMSTATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="DRUGCENTRECONFIRMSTATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="LATITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="LONGITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="CREATEDON" Type="DateTime" Precision="3" />
+          <Property Name="UPDATEDON" Type="DateTime" Precision="3" />
+        </EntityType>
+        <Association Name="FK__MEDICALIN__USERI__4F7CD00D">
+          <End Type="HonkerUnionModel.USERINFORMATION" Role="USERINFORMATION" Multiplicity="0..1" />
+          <End Type="HonkerUnionModel.MEDICALINFO" Role="MEDICALINFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USERINFORMATION">
+              <PropertyRef Name="USERINFORMATIONID" />
+            </Principal>
+            <Dependent Role="MEDICALINFO">
+              <PropertyRef Name="USERINFORMATIONID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__USERINFOR__USERI__4CA06362">
+          <End Type="HonkerUnionModel.USERLOGIN" Role="USERLOGIN" Multiplicity="1" />
+          <End Type="HonkerUnionModel.USERINFORMATION" Role="USERINFORMATION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USERLOGIN">
+              <PropertyRef Name="USERID" />
+            </Principal>
+            <Dependent Role="USERINFORMATION">
+              <PropertyRef Name="USERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="HonkerUnionModelStoreContainer" CdmEntityContainer="HonkerUnionEntities" />
+        <EntityContainerMapping StorageEntityContainer="HonkerUnionModelStoreContainer" CdmEntityContainer="HonkerUnionEntities" >
+          <EntitySetMapping Name="AMBULATORYSERVICEs">
+            <EntityTypeMapping TypeName="HonkerUnionModel.AMBULATORYSERVICE">
+              <MappingFragment StoreEntitySet="AMBULATORYSERVICE">
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="UPDATEDON" ColumnName="UPDATEDON" />
+                <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+                <ScalarProperty Name="LONGITUDE" ColumnName="LONGITUDE" />
+                <ScalarProperty Name="LATITUDE" ColumnName="LATITUDE" />
+                <ScalarProperty Name="AMBULATORYTELEPHONE" ColumnName="AMBULATORYTELEPHONE" />
+                <ScalarProperty Name="AMBULATORYZIP" ColumnName="AMBULATORYZIP" />
+                <ScalarProperty Name="AMBULATORYSTATE" ColumnName="AMBULATORYSTATE" />
+                <ScalarProperty Name="AMBULATORYCITY" ColumnName="AMBULATORYCITY" />
+                <ScalarProperty Name="AMBULATORYADD2" ColumnName="AMBULATORYADD2" />
+                <ScalarProperty Name="AMBULATORYADD1" ColumnName="AMBULATORYADD1" />
+                <ScalarProperty Name="AMBULATORYTYPE" ColumnName="AMBULATORYTYPE" />
+                <ScalarProperty Name="AMBULATORYSERVICENAME" ColumnName="AMBULATORYSERVICENAME" />
+                <ScalarProperty Name="AMBULATORYID" ColumnName="AMBULATORYID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MEDICALINFOes">
+            <EntityTypeMapping TypeName="HonkerUnionModel.MEDICALINFO">
+              <MappingFragment StoreEntitySet="MEDICALINFO">
+                <ScalarProperty Name="UPDATEDON" ColumnName="UPDATEDON" />
+                <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+                <ScalarProperty Name="USERINFORMATIONID" ColumnName="USERINFORMATIONID" />
+                <ScalarProperty Name="CURRENTHEALTHISSUE" ColumnName="CURRENTHEALTHISSUE" />
+                <ScalarProperty Name="MEDICALHISTORY" ColumnName="MEDICALHISTORY" />
+                <ScalarProperty Name="ALLERGYINFO" ColumnName="ALLERGYINFO" />
+                <ScalarProperty Name="ALLERGY" ColumnName="ALLERGY" />
+                <ScalarProperty Name="BLOODGROUP" ColumnName="BLOODGROUP" />
+                <ScalarProperty Name="MEDICALINFOID" ColumnName="MEDICALINFOID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PROVIDERINFOes">
+            <EntityTypeMapping TypeName="HonkerUnionModel.PROVIDERINFO">
+              <MappingFragment StoreEntitySet="PROVIDERINFO">
+                <ScalarProperty Name="LONGITUDE" ColumnName="LONGITUDE" />
+                <ScalarProperty Name="LATITUDE" ColumnName="LATITUDE" />
+                <ScalarProperty Name="SPECIALISTTYPE" ColumnName="SPECIALISTTYPE" />
+                <ScalarProperty Name="LICENCENUMBER" ColumnName="LICENCENUMBER" />
+                <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+                <ScalarProperty Name="PRACTICEZIP" ColumnName="PRACTICEZIP" />
+                <ScalarProperty Name="PRACTICESTATE" ColumnName="PRACTICESTATE" />
+                <ScalarProperty Name="PRACTICECITY" ColumnName="PRACTICECITY" />
+                <ScalarProperty Name="PRACTICEADD2" ColumnName="PRACTICEADD2" />
+                <ScalarProperty Name="PRACTICEADD1" ColumnName="PRACTICEADD1" />
+                <ScalarProperty Name="PROVIDERNAME" ColumnName="PROVIDERNAME" />
+                <ScalarProperty Name="TREATMENTTYPE" ColumnName="TREATMENTTYPE" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="PROVIDERNO" ColumnName="PROVIDERNO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USERINFORMATIONs">
+            <EntityTypeMapping TypeName="HonkerUnionModel.USERINFORMATION">
+              <MappingFragment StoreEntitySet="USERINFORMATION">
+                <ScalarProperty Name="UPDATEDON" ColumnName="UPDATEDON" />
+                <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+                <ScalarProperty Name="LONGITUDE" ColumnName="LONGITUDE" />
+                <ScalarProperty Name="LATITUDE" ColumnName="LATITUDE" />
+                <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+                <ScalarProperty Name="STATE" ColumnName="STATE" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="ALTERNATECONTACTNO" ColumnName="ALTERNATECONTACTNO" />
+                <ScalarProperty Name="PRIMARYCONTACTNO" ColumnName="PRIMARYCONTACTNO" />
+                <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+                <ScalarProperty Name="AGE" ColumnName="AGE" />
+                <ScalarProperty Name="USERLASTNAME" ColumnName="USERLASTNAME" />
+                <ScalarProperty Name="USERMIDLEINITIAL" ColumnName="USERMIDLEINITIAL" />
+                <ScalarProperty Name="USERFIRSTNAME" ColumnName="USERFIRSTNAME" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="USERINFORMATIONID" ColumnName="USERINFORMATIONID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USERLOGINs">
+            <EntityTypeMapping TypeName="HonkerUnionModel.USERLOGIN">
+              <MappingFragment StoreEntitySet="USERLOGIN">
+                <ScalarProperty Name="UPDATEDON" ColumnName="UPDATEDON" />
+                <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+                <ScalarProperty Name="USERROLE" ColumnName="USERROLE" />
+                <ScalarProperty Name="USERMAILID" ColumnName="USERMAILID" />
+                <ScalarProperty Name="USERMOBILENO" ColumnName="USERMOBILENO" />
+                <ScalarProperty Name="USERPASSWORD" ColumnName="USERPASSWORD" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CASEMANAGERINFOes">
+            <EntityTypeMapping TypeName="HonkerUnionModel.CASEMANAGERINFO">
+              <MappingFragment StoreEntitySet="CASEMANAGERINFO">
+                <ScalarProperty Name="LONGITUDE" ColumnName="LONGITUDE" />
+                <ScalarProperty Name="LATITUDE" ColumnName="LATITUDE" />
+                <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+                <ScalarProperty Name="PRACTICEZIP" ColumnName="PRACTICEZIP" />
+                <ScalarProperty Name="PRACTICESTATE" ColumnName="PRACTICESTATE" />
+                <ScalarProperty Name="PRACTICECITY" ColumnName="PRACTICECITY" />
+                <ScalarProperty Name="CASEMANAGERLISENCE" ColumnName="CASEMANAGERLISENCE" />
+                <ScalarProperty Name="CASEMANAGERLASTNAME" ColumnName="CASEMANAGERLASTNAME" />
+                <ScalarProperty Name="CASEMANAGERMIDLEINITIAL" ColumnName="CASEMANAGERMIDLEINITIAL" />
+                <ScalarProperty Name="CASEMANAGERFIRSTNAME" ColumnName="CASEMANAGERFIRSTNAME" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="CASEMANAGERID" ColumnName="CASEMANAGERID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DRUGCENTREs">
+            <EntityTypeMapping TypeName="HonkerUnionModel.DRUGCENTRE">
+              <MappingFragment StoreEntitySet="DRUGCENTRE">
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="UPDATEDON" ColumnName="UPDATEDON" />
+                <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+                <ScalarProperty Name="LONGITUDE" ColumnName="LONGITUDE" />
+                <ScalarProperty Name="LATITUDE" ColumnName="LATITUDE" />
+                <ScalarProperty Name="DRUGCENTRELICENS" ColumnName="DRUGCENTRELICENS" />
+                <ScalarProperty Name="DRUGCENTREZIP" ColumnName="DRUGCENTREZIP" />
+                <ScalarProperty Name="DRUGCENTRESTATE" ColumnName="DRUGCENTRESTATE" />
+                <ScalarProperty Name="DRUGCENTRECITY" ColumnName="DRUGCENTRECITY" />
+                <ScalarProperty Name="DRUGCENTRECONTACTNO" ColumnName="DRUGCENTRECONTACTNO" />
+                <ScalarProperty Name="DRUGCENTRENAME" ColumnName="DRUGCENTRENAME" />
+                <ScalarProperty Name="DRUGCENTREID" ColumnName="DRUGCENTREID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHYSICIANINFOes">
+            <EntityTypeMapping TypeName="HonkerUnionModel.PHYSICIANINFO">
+              <MappingFragment StoreEntitySet="PHYSICIANINFO">
+                <ScalarProperty Name="LONGITUDE" ColumnName="LONGITUDE" />
+                <ScalarProperty Name="LATITUDE" ColumnName="LATITUDE" />
+                <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+                <ScalarProperty Name="PRACTICEZIP" ColumnName="PRACTICEZIP" />
+                <ScalarProperty Name="PRACTICESTATE" ColumnName="PRACTICESTATE" />
+                <ScalarProperty Name="PRACTICECITY" ColumnName="PRACTICECITY" />
+                <ScalarProperty Name="TREATMENTTYPESPECIALIST" ColumnName="TREATMENTTYPESPECIALIST" />
+                <ScalarProperty Name="ISSURGON" ColumnName="ISSURGON" />
+                <ScalarProperty Name="ISPRIMARYPHYSICIAN" ColumnName="ISPRIMARYPHYSICIAN" />
+                <ScalarProperty Name="LISENCE" ColumnName="LISENCE" />
+                <ScalarProperty Name="LASTNAME" ColumnName="LASTNAME" />
+                <ScalarProperty Name="MIDLEINITIAL" ColumnName="MIDLEINITIAL" />
+                <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="PHYSICIANID" ColumnName="PHYSICIANID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PUSHNOTIFICATIONs">
+            <EntityTypeMapping TypeName="HonkerUnionModel.PUSHNOTIFICATION">
+              <MappingFragment StoreEntitySet="PUSHNOTIFICATION">
+                <ScalarProperty Name="UPDATEDON" ColumnName="UPDATEDON" />
+                <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+                <ScalarProperty Name="LONGITUDE" ColumnName="LONGITUDE" />
+                <ScalarProperty Name="LATITUDE" ColumnName="LATITUDE" />
+                <ScalarProperty Name="DRUGCENTRECONFIRMSTATUS" ColumnName="DRUGCENTRECONFIRMSTATUS" />
+                <ScalarProperty Name="CASEMANAGERCONFIRMSTATUS" ColumnName="CASEMANAGERCONFIRMSTATUS" />
+                <ScalarProperty Name="AMBULATORYCONFIRMSTATUS" ColumnName="AMBULATORYCONFIRMSTATUS" />
+                <ScalarProperty Name="PHYSICIANCONFIRMSTATUS" ColumnName="PHYSICIANCONFIRMSTATUS" />
+                <ScalarProperty Name="PROVIDERCONFIRMSTATUS" ColumnName="PROVIDERCONFIRMSTATUS" />
+                <ScalarProperty Name="DRUGCENTREID" ColumnName="DRUGCENTREID" />
+                <ScalarProperty Name="CASEMANAGERID" ColumnName="CASEMANAGERID" />
+                <ScalarProperty Name="AMBULATORYID" ColumnName="AMBULATORYID" />
+                <ScalarProperty Name="PHYSICIANID" ColumnName="PHYSICIANID" />
+                <ScalarProperty Name="PROVIDERNO" ColumnName="PROVIDERNO" />
+                <ScalarProperty Name="NOTIFICATIONTEXT" ColumnName="NOTIFICATIONTEXT" />
+                <ScalarProperty Name="TREATMENTTYPE" ColumnName="TREATMENTTYPE" />
+                <ScalarProperty Name="USERINFORMATIONID" ColumnName="USERINFORMATIONID" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="NOTIFICATIONID" ColumnName="NOTIFICATIONID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
