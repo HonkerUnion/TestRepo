@@ -73,3 +73,11 @@ _[Ss]cripts
 *.nupkg
 *.ncrunchsolution
 *.dot[Cc]over
+
+**/.vs/
+
+/**/obj/
+/**/bin/
+/**/packages/
+
+/Code/WebBackend2/WebPortal/Logs/
