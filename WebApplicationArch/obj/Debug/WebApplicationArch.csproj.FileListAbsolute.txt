@@ -275,6 +275,7 @@ D:\mHack HokerUnion\honkerunion\WebApplicationArch\bin\EntityFramework.xml
 D:\mHack HokerUnion\honkerunion\WebApplicationArch\obj\Debug\WebApplicationArch.csprojResolveAssemblyReference.cache
 D:\mHack HokerUnion\honkerunion\WebApplicationArch\obj\Debug\WebApplicationArch.dll
 D:\mHack HokerUnion\honkerunion\WebApplicationArch\obj\Debug\WebApplicationArch.pdb
+D:\TestRepo\WebApplicationArch\obj\Debug\WebApplicationArch.csprojResolveAssemblyReference.cache
 D:\TestRepo\WebApplicationArch\bin\WebApplicationArch.dll.config
 D:\TestRepo\WebApplicationArch\bin\WebApplicationArch.dll
 D:\TestRepo\WebApplicationArch\bin\WebApplicationArch.pdb
@@ -326,12 +327,20 @@ D:\TestRepo\WebApplicationArch\bin\roslyn\VBCSCompiler.exe
 D:\TestRepo\WebApplicationArch\bin\roslyn\VBCSCompiler.exe.config
 D:\TestRepo\WebApplicationArch\bin\Antlr3.Runtime.dll
 D:\TestRepo\WebApplicationArch\bin\BusinessEntity.dll
+D:\TestRepo\WebApplicationArch\bin\Hangfire.Core.dll
+D:\TestRepo\WebApplicationArch\bin\Hangfire.SqlServer.dll
 D:\TestRepo\WebApplicationArch\bin\Marlabs.Tool.Business.Core.dll
 D:\TestRepo\WebApplicationArch\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\TestRepo\WebApplicationArch\bin\Microsoft.Owin.dll
+D:\TestRepo\WebApplicationArch\bin\Microsoft.Owin.Host.SystemWeb.dll
 D:\TestRepo\WebApplicationArch\bin\Microsoft.Web.Infrastructure.dll
 D:\TestRepo\WebApplicationArch\bin\Newtonsoft.Json.dll
+D:\TestRepo\WebApplicationArch\bin\Owin.dll
+D:\TestRepo\WebApplicationArch\bin\Swashbuckle.Core.dll
 D:\TestRepo\WebApplicationArch\bin\System.Net.Http.Formatting.dll
+D:\TestRepo\WebApplicationArch\bin\System.Web.Cors.dll
 D:\TestRepo\WebApplicationArch\bin\System.Web.Helpers.dll
+D:\TestRepo\WebApplicationArch\bin\System.Web.Http.Cors.dll
 D:\TestRepo\WebApplicationArch\bin\System.Web.Http.dll
 D:\TestRepo\WebApplicationArch\bin\System.Web.Http.WebHost.dll
 D:\TestRepo\WebApplicationArch\bin\System.Web.Mvc.dll
@@ -340,16 +349,22 @@ D:\TestRepo\WebApplicationArch\bin\System.Web.Razor.dll
 D:\TestRepo\WebApplicationArch\bin\System.Web.WebPages.Deployment.dll
 D:\TestRepo\WebApplicationArch\bin\System.Web.WebPages.dll
 D:\TestRepo\WebApplicationArch\bin\System.Web.WebPages.Razor.dll
+D:\TestRepo\WebApplicationArch\bin\WebActivatorEx.dll
 D:\TestRepo\WebApplicationArch\bin\WebGrease.dll
 D:\TestRepo\WebApplicationArch\bin\Marlabs.Tool.Data.dll
 D:\TestRepo\WebApplicationArch\bin\AutoMapper.dll
 D:\TestRepo\WebApplicationArch\bin\EntityFramework.dll
 D:\TestRepo\WebApplicationArch\bin\BusinessEntity.pdb
 D:\TestRepo\WebApplicationArch\bin\Marlabs.Tool.Business.Core.pdb
-D:\TestRepo\WebApplicationArch\bin\Newtonsoft.Json.xml
+D:\TestRepo\WebApplicationArch\bin\Hangfire.Core.xml
+D:\TestRepo\WebApplicationArch\bin\Hangfire.SqlServer.xml
+D:\TestRepo\WebApplicationArch\bin\Microsoft.Owin.xml
+D:\TestRepo\WebApplicationArch\bin\Microsoft.Owin.Host.SystemWeb.xml
 D:\TestRepo\WebApplicationArch\bin\System.Net.Http.Formatting.xml
-D:\TestRepo\WebApplicationArch\bin\System.Web.Helpers.xml
 D:\TestRepo\WebApplicationArch\bin\System.Web.Http.xml
+D:\TestRepo\WebApplicationArch\bin\System.Web.Http.Cors.xml
+D:\TestRepo\WebApplicationArch\bin\Newtonsoft.Json.xml
+D:\TestRepo\WebApplicationArch\bin\System.Web.Helpers.xml
 D:\TestRepo\WebApplicationArch\bin\System.Web.Http.WebHost.xml
 D:\TestRepo\WebApplicationArch\bin\System.Web.Mvc.xml
 D:\TestRepo\WebApplicationArch\bin\System.Web.Optimization.xml
@@ -362,6 +377,9 @@ D:\TestRepo\WebApplicationArch\bin\Microsoft.CodeDom.Providers.DotNetCompilerPla
 D:\TestRepo\WebApplicationArch\bin\Marlabs.Tool.Data.pdb
 D:\TestRepo\WebApplicationArch\bin\AutoMapper.xml
 D:\TestRepo\WebApplicationArch\bin\EntityFramework.xml
-D:\TestRepo\WebApplicationArch\obj\Debug\WebApplicationArch.csprojResolveAssemblyReference.cache
+D:\TestRepo\WebApplicationArch\bin\es\Hangfire.Core.resources.dll
+D:\TestRepo\WebApplicationArch\bin\nl\Hangfire.Core.resources.dll
+D:\TestRepo\WebApplicationArch\bin\zh\Hangfire.Core.resources.dll
+D:\TestRepo\WebApplicationArch\bin\zh-TW\Hangfire.Core.resources.dll
 D:\TestRepo\WebApplicationArch\obj\Debug\WebApplicationArch.dll
 D:\TestRepo\WebApplicationArch\obj\Debug\WebApplicationArch.pdb

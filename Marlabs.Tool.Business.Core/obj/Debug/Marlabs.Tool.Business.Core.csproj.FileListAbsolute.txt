@@ -11,6 +11,7 @@ D:\mHack HokerUnion\honkerunion\Marlabs.Tool.Business.Core\bin\Debug\EntityFrame
 D:\mHack HokerUnion\honkerunion\Marlabs.Tool.Business.Core\obj\Debug\Marlabs.Tool.Business.Core.csprojResolveAssemblyReference.cache
 D:\mHack HokerUnion\honkerunion\Marlabs.Tool.Business.Core\obj\Debug\Marlabs.Tool.Business.Core.dll
 D:\mHack HokerUnion\honkerunion\Marlabs.Tool.Business.Core\obj\Debug\Marlabs.Tool.Business.Core.pdb
+D:\TestRepo\Marlabs.Tool.Business.Core\obj\Debug\Marlabs.Tool.Business.Core.csprojResolveAssemblyReference.cache
 D:\TestRepo\Marlabs.Tool.Business.Core\bin\Debug\Marlabs.Tool.Business.Core.dll
 D:\TestRepo\Marlabs.Tool.Business.Core\bin\Debug\Marlabs.Tool.Business.Core.pdb
 D:\TestRepo\Marlabs.Tool.Business.Core\bin\Debug\AutoMapper.dll
@@ -21,6 +22,5 @@ D:\TestRepo\Marlabs.Tool.Business.Core\bin\Debug\BusinessEntity.pdb
 D:\TestRepo\Marlabs.Tool.Business.Core\bin\Debug\Marlabs.Tool.Data.pdb
 D:\TestRepo\Marlabs.Tool.Business.Core\bin\Debug\AutoMapper.xml
 D:\TestRepo\Marlabs.Tool.Business.Core\bin\Debug\EntityFramework.xml
-D:\TestRepo\Marlabs.Tool.Business.Core\obj\Debug\Marlabs.Tool.Business.Core.csprojResolveAssemblyReference.cache
 D:\TestRepo\Marlabs.Tool.Business.Core\obj\Debug\Marlabs.Tool.Business.Core.dll
 D:\TestRepo\Marlabs.Tool.Business.Core\obj\Debug\Marlabs.Tool.Business.Core.pdb

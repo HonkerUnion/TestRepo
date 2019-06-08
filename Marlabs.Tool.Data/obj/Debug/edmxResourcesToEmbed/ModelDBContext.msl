@@ -1,4 +1,182 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="HonkerUnionModelStoreContainer" CdmEntityContainer="HonkerUnionEntities" />
+  <EntityContainerMapping StorageEntityContainer="HonkerUnionModelStoreContainer" CdmEntityContainer="HonkerUnionEntities">
+    <EntitySetMapping Name="AMBULATORYSERVICEs">
+      <EntityTypeMapping TypeName="HonkerUnionModel.AMBULATORYSERVICE">
+        <MappingFragment StoreEntitySet="AMBULATORYSERVICE">
+          <ScalarProperty Name="CONTACTNO" ColumnName="CONTACTNO" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="UPDATEDON" ColumnName="UPDATEDON" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="LONGITUDE" ColumnName="LONGITUDE" />
+          <ScalarProperty Name="LATITUDE" ColumnName="LATITUDE" />
+          <ScalarProperty Name="AMBULATORYTELEPHONE" ColumnName="AMBULATORYTELEPHONE" />
+          <ScalarProperty Name="AMBULATORYZIP" ColumnName="AMBULATORYZIP" />
+          <ScalarProperty Name="AMBULATORYSTATE" ColumnName="AMBULATORYSTATE" />
+          <ScalarProperty Name="AMBULATORYCITY" ColumnName="AMBULATORYCITY" />
+          <ScalarProperty Name="AMBULATORYADD2" ColumnName="AMBULATORYADD2" />
+          <ScalarProperty Name="AMBULATORYADD1" ColumnName="AMBULATORYADD1" />
+          <ScalarProperty Name="AMBULATORYTYPE" ColumnName="AMBULATORYTYPE" />
+          <ScalarProperty Name="AMBULATORYSERVICENAME" ColumnName="AMBULATORYSERVICENAME" />
+          <ScalarProperty Name="AMBULATORYID" ColumnName="AMBULATORYID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MEDICALINFOes">
+      <EntityTypeMapping TypeName="HonkerUnionModel.MEDICALINFO">
+        <MappingFragment StoreEntitySet="MEDICALINFO">
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="UPDATEDON" ColumnName="UPDATEDON" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="USERINFORMATIONID" ColumnName="USERINFORMATIONID" />
+          <ScalarProperty Name="CURRENTHEALTHISSUE" ColumnName="CURRENTHEALTHISSUE" />
+          <ScalarProperty Name="MEDICALHISTORY" ColumnName="MEDICALHISTORY" />
+          <ScalarProperty Name="ALLERGYINFO" ColumnName="ALLERGYINFO" />
+          <ScalarProperty Name="ALLERGY" ColumnName="ALLERGY" />
+          <ScalarProperty Name="BLOODGROUP" ColumnName="BLOODGROUP" />
+          <ScalarProperty Name="MEDICALINFOID" ColumnName="MEDICALINFOID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROVIDERINFOes">
+      <EntityTypeMapping TypeName="HonkerUnionModel.PROVIDERINFO">
+        <MappingFragment StoreEntitySet="PROVIDERINFO">
+          <ScalarProperty Name="LONGITUDE" ColumnName="LONGITUDE" />
+          <ScalarProperty Name="LATITUDE" ColumnName="LATITUDE" />
+          <ScalarProperty Name="SPECIALISTTYPE" ColumnName="SPECIALISTTYPE" />
+          <ScalarProperty Name="LICENCENUMBER" ColumnName="LICENCENUMBER" />
+          <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+          <ScalarProperty Name="PRACTICEZIP" ColumnName="PRACTICEZIP" />
+          <ScalarProperty Name="PRACTICESTATE" ColumnName="PRACTICESTATE" />
+          <ScalarProperty Name="PRACTICECITY" ColumnName="PRACTICECITY" />
+          <ScalarProperty Name="PRACTICEADD2" ColumnName="PRACTICEADD2" />
+          <ScalarProperty Name="PRACTICEADD1" ColumnName="PRACTICEADD1" />
+          <ScalarProperty Name="PROVIDERNAME" ColumnName="PROVIDERNAME" />
+          <ScalarProperty Name="TREATMENTTYPE" ColumnName="TREATMENTTYPE" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="PROVIDERNO" ColumnName="PROVIDERNO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERINFORMATIONs">
+      <EntityTypeMapping TypeName="HonkerUnionModel.USERINFORMATION">
+        <MappingFragment StoreEntitySet="USERINFORMATION">
+          <ScalarProperty Name="TREATMENTTYPE" ColumnName="TREATMENTTYPE" />
+          <ScalarProperty Name="UPDATEDON" ColumnName="UPDATEDON" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="LONGITUDE" ColumnName="LONGITUDE" />
+          <ScalarProperty Name="LATITUDE" ColumnName="LATITUDE" />
+          <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="ALTERNATECONTACTNO" ColumnName="ALTERNATECONTACTNO" />
+          <ScalarProperty Name="PRIMARYCONTACTNO" ColumnName="PRIMARYCONTACTNO" />
+          <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+          <ScalarProperty Name="AGE" ColumnName="AGE" />
+          <ScalarProperty Name="USERLASTNAME" ColumnName="USERLASTNAME" />
+          <ScalarProperty Name="USERMIDLEINITIAL" ColumnName="USERMIDLEINITIAL" />
+          <ScalarProperty Name="USERFIRSTNAME" ColumnName="USERFIRSTNAME" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="USERINFORMATIONID" ColumnName="USERINFORMATIONID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERLOGINs">
+      <EntityTypeMapping TypeName="HonkerUnionModel.USERLOGIN">
+        <MappingFragment StoreEntitySet="USERLOGIN">
+          <ScalarProperty Name="UPDATEDON" ColumnName="UPDATEDON" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="USERROLE" ColumnName="USERROLE" />
+          <ScalarProperty Name="USERMAILID" ColumnName="USERMAILID" />
+          <ScalarProperty Name="USERMOBILENO" ColumnName="USERMOBILENO" />
+          <ScalarProperty Name="USERPASSWORD" ColumnName="USERPASSWORD" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CASEMANAGERINFOes">
+      <EntityTypeMapping TypeName="HonkerUnionModel.CASEMANAGERINFO">
+        <MappingFragment StoreEntitySet="CASEMANAGERINFO">
+          <ScalarProperty Name="LONGITUDE" ColumnName="LONGITUDE" />
+          <ScalarProperty Name="LATITUDE" ColumnName="LATITUDE" />
+          <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+          <ScalarProperty Name="PRACTICEZIP" ColumnName="PRACTICEZIP" />
+          <ScalarProperty Name="PRACTICESTATE" ColumnName="PRACTICESTATE" />
+          <ScalarProperty Name="PRACTICECITY" ColumnName="PRACTICECITY" />
+          <ScalarProperty Name="CASEMANAGERLISENCE" ColumnName="CASEMANAGERLISENCE" />
+          <ScalarProperty Name="CASEMANAGERLASTNAME" ColumnName="CASEMANAGERLASTNAME" />
+          <ScalarProperty Name="CASEMANAGERMIDLEINITIAL" ColumnName="CASEMANAGERMIDLEINITIAL" />
+          <ScalarProperty Name="CASEMANAGERFIRSTNAME" ColumnName="CASEMANAGERFIRSTNAME" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="CASEMANAGERID" ColumnName="CASEMANAGERID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DRUGCENTREs">
+      <EntityTypeMapping TypeName="HonkerUnionModel.DRUGCENTRE">
+        <MappingFragment StoreEntitySet="DRUGCENTRE">
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="UPDATEDON" ColumnName="UPDATEDON" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="LONGITUDE" ColumnName="LONGITUDE" />
+          <ScalarProperty Name="LATITUDE" ColumnName="LATITUDE" />
+          <ScalarProperty Name="DRUGCENTRELICENS" ColumnName="DRUGCENTRELICENS" />
+          <ScalarProperty Name="DRUGCENTREZIP" ColumnName="DRUGCENTREZIP" />
+          <ScalarProperty Name="DRUGCENTRESTATE" ColumnName="DRUGCENTRESTATE" />
+          <ScalarProperty Name="DRUGCENTRECITY" ColumnName="DRUGCENTRECITY" />
+          <ScalarProperty Name="DRUGCENTRECONTACTNO" ColumnName="DRUGCENTRECONTACTNO" />
+          <ScalarProperty Name="DRUGCENTRENAME" ColumnName="DRUGCENTRENAME" />
+          <ScalarProperty Name="DRUGCENTREID" ColumnName="DRUGCENTREID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PUSHNOTIFICATIONs">
+      <EntityTypeMapping TypeName="HonkerUnionModel.PUSHNOTIFICATION">
+        <MappingFragment StoreEntitySet="PUSHNOTIFICATION">
+          <ScalarProperty Name="UPDATEDON" ColumnName="UPDATEDON" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="LONGITUDE" ColumnName="LONGITUDE" />
+          <ScalarProperty Name="LATITUDE" ColumnName="LATITUDE" />
+          <ScalarProperty Name="DRUGCENTRECONFIRMSTATUS" ColumnName="DRUGCENTRECONFIRMSTATUS" />
+          <ScalarProperty Name="CASEMANAGERCONFIRMSTATUS" ColumnName="CASEMANAGERCONFIRMSTATUS" />
+          <ScalarProperty Name="AMBULATORYCONFIRMSTATUS" ColumnName="AMBULATORYCONFIRMSTATUS" />
+          <ScalarProperty Name="PHYSICIANCONFIRMSTATUS" ColumnName="PHYSICIANCONFIRMSTATUS" />
+          <ScalarProperty Name="PROVIDERCONFIRMSTATUS" ColumnName="PROVIDERCONFIRMSTATUS" />
+          <ScalarProperty Name="DRUGCENTREID" ColumnName="DRUGCENTREID" />
+          <ScalarProperty Name="CASEMANAGERID" ColumnName="CASEMANAGERID" />
+          <ScalarProperty Name="AMBULATORYID" ColumnName="AMBULATORYID" />
+          <ScalarProperty Name="PHYSICIANID" ColumnName="PHYSICIANID" />
+          <ScalarProperty Name="PROVIDERNO" ColumnName="PROVIDERNO" />
+          <ScalarProperty Name="NOTIFICATIONTEXT" ColumnName="NOTIFICATIONTEXT" />
+          <ScalarProperty Name="TREATMENTTYPE" ColumnName="TREATMENTTYPE" />
+          <ScalarProperty Name="USERINFORMATIONID" ColumnName="USERINFORMATIONID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="NOTIFICATIONID" ColumnName="NOTIFICATIONID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PHYSICIANINFOes">
+      <EntityTypeMapping TypeName="HonkerUnionModel.PHYSICIANINFO">
+        <MappingFragment StoreEntitySet="PHYSICIANINFO">
+          <ScalarProperty Name="LONGITUDE" ColumnName="LONGITUDE" />
+          <ScalarProperty Name="LATITUDE" ColumnName="LATITUDE" />
+          <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+          <ScalarProperty Name="PRACTICEZIP" ColumnName="PRACTICEZIP" />
+          <ScalarProperty Name="PRACTICESTATE" ColumnName="PRACTICESTATE" />
+          <ScalarProperty Name="PRACTICECITY" ColumnName="PRACTICECITY" />
+          <ScalarProperty Name="TREATMENTTYPESPECIALIST" ColumnName="TREATMENTTYPESPECIALIST" />
+          <ScalarProperty Name="ISSURGON" ColumnName="ISSURGON" />
+          <ScalarProperty Name="ISPRIMARYPHYSICIAN" ColumnName="ISPRIMARYPHYSICIAN" />
+          <ScalarProperty Name="LISENCE" ColumnName="LISENCE" />
+          <ScalarProperty Name="LASTNAME" ColumnName="LASTNAME" />
+          <ScalarProperty Name="MIDLEINITIAL" ColumnName="MIDLEINITIAL" />
+          <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="PHYSICIANID" ColumnName="PHYSICIANID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
 </Mapping>

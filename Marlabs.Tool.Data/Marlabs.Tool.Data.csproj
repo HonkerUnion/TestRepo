@@ -61,6 +61,9 @@
     <Compile Include="DRUGCENTRE.cs">
       <DependentUpon>ModelDBContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="PHYSICIANINFO.cs">
+      <DependentUpon>ModelDBContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="PushNotificationRepository.cs" />
     <Compile Include="UserInformationRepository.cs" />
     <Compile Include="GenericRepository\GenericRepository.cs" />
@@ -81,9 +84,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelDBContext.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="PHYSICIANINFO.cs">
-      <DependentUpon>ModelDBContext.tt</DependentUpon>
     </Compile>
     <Compile Include="product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -46,9 +46,9 @@ public partial class HonkerUnionEntities : DbContext
 
     public virtual DbSet<DRUGCENTRE> DRUGCENTREs { get; set; }
 
-    public virtual DbSet<PHYSICIANINFO> PHYSICIANINFOes { get; set; }
-
     public virtual DbSet<PUSHNOTIFICATION> PUSHNOTIFICATIONs { get; set; }
+
+    public virtual DbSet<PHYSICIANINFO> PHYSICIANINFOes { get; set; }
 
 }
 

@@ -20,6 +20,7 @@ D:\mHack HokerUnion\honkerunion\Marlabs.Tool.Data\bin\Debug\EntityFramework.SqlS
 D:\mHack HokerUnion\honkerunion\Marlabs.Tool.Data\obj\Debug\Marlabs.Tool.Data.dll
 D:\mHack HokerUnion\honkerunion\Marlabs.Tool.Data\obj\Debug\Marlabs.Tool.Data.pdb
 D:\mHack HokerUnion\honkerunion\Marlabs.Tool.Data\obj\Debug\Marlabs.Tool.Data.csprojResolveAssemblyReference.cache
+D:\TestRepo\Marlabs.Tool.Data\obj\Debug\Marlabs.Tool.Data.csprojResolveAssemblyReference.cache
 D:\TestRepo\Marlabs.Tool.Data\bin\Debug\Marlabs.Tool.Data.dll.config
 D:\TestRepo\Marlabs.Tool.Data\bin\Debug\Marlabs.Tool.Data.dll
 D:\TestRepo\Marlabs.Tool.Data\bin\Debug\Marlabs.Tool.Data.pdb
@@ -27,6 +28,5 @@ D:\TestRepo\Marlabs.Tool.Data\bin\Debug\EntityFramework.dll
 D:\TestRepo\Marlabs.Tool.Data\bin\Debug\EntityFramework.SqlServer.dll
 D:\TestRepo\Marlabs.Tool.Data\bin\Debug\EntityFramework.xml
 D:\TestRepo\Marlabs.Tool.Data\bin\Debug\EntityFramework.SqlServer.xml
-D:\TestRepo\Marlabs.Tool.Data\obj\Debug\Marlabs.Tool.Data.csprojResolveAssemblyReference.cache
 D:\TestRepo\Marlabs.Tool.Data\obj\Debug\Marlabs.Tool.Data.dll
 D:\TestRepo\Marlabs.Tool.Data\obj\Debug\Marlabs.Tool.Data.pdb
