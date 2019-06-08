@@ -64,6 +64,9 @@
     <Compile Include="PHYSICIANINFO.cs">
       <DependentUpon>ModelDBContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="PUSHNOTIFICATION.cs">
+      <DependentUpon>ModelDBContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="PushNotificationRepository.cs" />
     <Compile Include="UserInformationRepository.cs" />
     <Compile Include="GenericRepository\GenericRepository.cs" />
@@ -88,9 +91,6 @@
     <Compile Include="product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PROVIDERINFO.cs">
-      <DependentUpon>ModelDBContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PUSHNOTIFICATION.cs">
       <DependentUpon>ModelDBContext.tt</DependentUpon>
     </Compile>
     <Compile Include="UnitOfWork\UnitOfWork.cs" />

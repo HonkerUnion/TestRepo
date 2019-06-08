@@ -275,7 +275,6 @@ D:\mHack HokerUnion\honkerunion\WebApplicationArch\bin\EntityFramework.xml
 D:\mHack HokerUnion\honkerunion\WebApplicationArch\obj\Debug\WebApplicationArch.csprojResolveAssemblyReference.cache
 D:\mHack HokerUnion\honkerunion\WebApplicationArch\obj\Debug\WebApplicationArch.dll
 D:\mHack HokerUnion\honkerunion\WebApplicationArch\obj\Debug\WebApplicationArch.pdb
-D:\TestRepo\WebApplicationArch\obj\Debug\WebApplicationArch.csprojResolveAssemblyReference.cache
 D:\TestRepo\WebApplicationArch\bin\WebApplicationArch.dll.config
 D:\TestRepo\WebApplicationArch\bin\WebApplicationArch.dll
 D:\TestRepo\WebApplicationArch\bin\WebApplicationArch.pdb
@@ -381,5 +380,6 @@ D:\TestRepo\WebApplicationArch\bin\es\Hangfire.Core.resources.dll
 D:\TestRepo\WebApplicationArch\bin\nl\Hangfire.Core.resources.dll
 D:\TestRepo\WebApplicationArch\bin\zh\Hangfire.Core.resources.dll
 D:\TestRepo\WebApplicationArch\bin\zh-TW\Hangfire.Core.resources.dll
+D:\TestRepo\WebApplicationArch\obj\Debug\WebApplicationArch.csprojResolveAssemblyReference.cache
 D:\TestRepo\WebApplicationArch\obj\Debug\WebApplicationArch.dll
 D:\TestRepo\WebApplicationArch\obj\Debug\WebApplicationArch.pdb

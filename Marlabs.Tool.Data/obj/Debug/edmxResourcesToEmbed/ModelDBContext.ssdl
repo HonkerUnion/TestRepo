@@ -115,8 +115,6 @@ warning 6002: The table/view 'HonkerUnion.dbo.PHYSICIANINFO' does not have a pri
     <Property Name="LATITUDE" Type="varchar" MaxLength="9" />
     <Property Name="LONGITUDE" Type="varchar" MaxLength="9" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'HonkerUnion.dbo.PUSHNOTIFICATION' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="PUSHNOTIFICATION">
     <Key>
       <PropertyRef Name="NOTIFICATIONID" />
@@ -205,6 +203,7 @@ warning 6002: The table/view 'HonkerUnion.dbo.PUSHNOTIFICATION' does not have a 
     <EntitySet Name="AMBULATORYSERVICE" EntityType="Self.AMBULATORYSERVICE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MEDICALINFO" EntityType="Self.MEDICALINFO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PROVIDERINFO" EntityType="Self.PROVIDERINFO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PUSHNOTIFICATION" EntityType="Self.PUSHNOTIFICATION" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="USERINFORMATION" EntityType="Self.USERINFORMATION" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="USERLOGIN" EntityType="Self.USERLOGIN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CASEMANAGERINFO" EntityType="Self.CASEMANAGERINFO" store:Type="Tables" store:Schema="dbo">
@@ -257,29 +256,6 @@ warning 6002: The table/view 'HonkerUnion.dbo.PUSHNOTIFICATION' does not have a 
     [PHYSICIANINFO].[LATITUDE] AS [LATITUDE], 
     [PHYSICIANINFO].[LONGITUDE] AS [LONGITUDE]
     FROM [dbo].[PHYSICIANINFO] AS [PHYSICIANINFO]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="PUSHNOTIFICATION" EntityType="Self.PUSHNOTIFICATION" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [PUSHNOTIFICATION].[NOTIFICATIONID] AS [NOTIFICATIONID], 
-    [PUSHNOTIFICATION].[USERID] AS [USERID], 
-    [PUSHNOTIFICATION].[USERINFORMATIONID] AS [USERINFORMATIONID], 
-    [PUSHNOTIFICATION].[TREATMENTTYPE] AS [TREATMENTTYPE], 
-    [PUSHNOTIFICATION].[NOTIFICATIONTEXT] AS [NOTIFICATIONTEXT], 
-    [PUSHNOTIFICATION].[PROVIDERNO] AS [PROVIDERNO], 
-    [PUSHNOTIFICATION].[PHYSICIANID] AS [PHYSICIANID], 
-    [PUSHNOTIFICATION].[AMBULATORYID] AS [AMBULATORYID], 
-    [PUSHNOTIFICATION].[CASEMANAGERID] AS [CASEMANAGERID], 
-    [PUSHNOTIFICATION].[DRUGCENTREID] AS [DRUGCENTREID], 
-    [PUSHNOTIFICATION].[PROVIDERCONFIRMSTATUS] AS [PROVIDERCONFIRMSTATUS], 
-    [PUSHNOTIFICATION].[PHYSICIANCONFIRMSTATUS] AS [PHYSICIANCONFIRMSTATUS], 
-    [PUSHNOTIFICATION].[AMBULATORYCONFIRMSTATUS] AS [AMBULATORYCONFIRMSTATUS], 
-    [PUSHNOTIFICATION].[CASEMANAGERCONFIRMSTATUS] AS [CASEMANAGERCONFIRMSTATUS], 
-    [PUSHNOTIFICATION].[DRUGCENTRECONFIRMSTATUS] AS [DRUGCENTRECONFIRMSTATUS], 
-    [PUSHNOTIFICATION].[LATITUDE] AS [LATITUDE], 
-    [PUSHNOTIFICATION].[LONGITUDE] AS [LONGITUDE], 
-    [PUSHNOTIFICATION].[CREATEDON] AS [CREATEDON], 
-    [PUSHNOTIFICATION].[UPDATEDON] AS [UPDATEDON]
-    FROM [dbo].[PUSHNOTIFICATION] AS [PUSHNOTIFICATION]</DefiningQuery>
     </EntitySet>
     <AssociationSet Name="FK__MEDICALIN__USERI__4F7CD00D" Association="Self.FK__MEDICALIN__USERI__4F7CD00D">
       <End Role="USERINFORMATION" EntitySet="USERINFORMATION" />

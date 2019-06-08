@@ -132,6 +132,27 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="PHYSICIANINFOes">
+      <EntityTypeMapping TypeName="HonkerUnionModel.PHYSICIANINFO">
+        <MappingFragment StoreEntitySet="PHYSICIANINFO">
+          <ScalarProperty Name="LONGITUDE" ColumnName="LONGITUDE" />
+          <ScalarProperty Name="LATITUDE" ColumnName="LATITUDE" />
+          <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
+          <ScalarProperty Name="PRACTICEZIP" ColumnName="PRACTICEZIP" />
+          <ScalarProperty Name="PRACTICESTATE" ColumnName="PRACTICESTATE" />
+          <ScalarProperty Name="PRACTICECITY" ColumnName="PRACTICECITY" />
+          <ScalarProperty Name="TREATMENTTYPESPECIALIST" ColumnName="TREATMENTTYPESPECIALIST" />
+          <ScalarProperty Name="ISSURGON" ColumnName="ISSURGON" />
+          <ScalarProperty Name="ISPRIMARYPHYSICIAN" ColumnName="ISPRIMARYPHYSICIAN" />
+          <ScalarProperty Name="LISENCE" ColumnName="LISENCE" />
+          <ScalarProperty Name="LASTNAME" ColumnName="LASTNAME" />
+          <ScalarProperty Name="MIDLEINITIAL" ColumnName="MIDLEINITIAL" />
+          <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="PHYSICIANID" ColumnName="PHYSICIANID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="PUSHNOTIFICATIONs">
       <EntityTypeMapping TypeName="HonkerUnionModel.PUSHNOTIFICATION">
         <MappingFragment StoreEntitySet="PUSHNOTIFICATION">
@@ -154,27 +175,6 @@
           <ScalarProperty Name="USERINFORMATIONID" ColumnName="USERINFORMATIONID" />
           <ScalarProperty Name="USERID" ColumnName="USERID" />
           <ScalarProperty Name="NOTIFICATIONID" ColumnName="NOTIFICATIONID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="PHYSICIANINFOes">
-      <EntityTypeMapping TypeName="HonkerUnionModel.PHYSICIANINFO">
-        <MappingFragment StoreEntitySet="PHYSICIANINFO">
-          <ScalarProperty Name="LONGITUDE" ColumnName="LONGITUDE" />
-          <ScalarProperty Name="LATITUDE" ColumnName="LATITUDE" />
-          <ScalarProperty Name="TELEPHONE" ColumnName="TELEPHONE" />
-          <ScalarProperty Name="PRACTICEZIP" ColumnName="PRACTICEZIP" />
-          <ScalarProperty Name="PRACTICESTATE" ColumnName="PRACTICESTATE" />
-          <ScalarProperty Name="PRACTICECITY" ColumnName="PRACTICECITY" />
-          <ScalarProperty Name="TREATMENTTYPESPECIALIST" ColumnName="TREATMENTTYPESPECIALIST" />
-          <ScalarProperty Name="ISSURGON" ColumnName="ISSURGON" />
-          <ScalarProperty Name="ISPRIMARYPHYSICIAN" ColumnName="ISPRIMARYPHYSICIAN" />
-          <ScalarProperty Name="LISENCE" ColumnName="LISENCE" />
-          <ScalarProperty Name="LASTNAME" ColumnName="LASTNAME" />
-          <ScalarProperty Name="MIDLEINITIAL" ColumnName="MIDLEINITIAL" />
-          <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
-          <ScalarProperty Name="USERID" ColumnName="USERID" />
-          <ScalarProperty Name="PHYSICIANID" ColumnName="PHYSICIANID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
