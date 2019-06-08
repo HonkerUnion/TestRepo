@@ -45,7 +45,7 @@
         }
 
         [HttpPost]
-        [Route("{notificationId}/Ambulance/{physicanId}")]
+        [Route("{notificationId}/Physican/{physicanId}")]
         public HttpResponseMessage updatePhysicanInfoConfirmStatus(int notificationId, int physicanId)
         {
             var result = _pushNotificationServices.updatePhysicanInfoConfirmStatus(notificationId, physicanId);
@@ -55,7 +55,7 @@
         }
 
         [HttpPost]
-        [Route("{notificationId}/Ambulance/{DrugCentreId}")]
+        [Route("{notificationId}/DrugCentre/{DrugCentreId}")]
         public HttpResponseMessage updateDrugCentreConfirmStatus(int notificationId, int DrugCentreId)
         {
             var result = _pushNotificationServices.updateDrugCentreConfirmStatus(notificationId, DrugCentreId);
@@ -66,7 +66,7 @@
 
 
         [HttpPost]
-        [Route("{notificationId}/Ambulance/{ProviderId}")]
+        [Route("{notificationId}/Provider/{ProviderId}")]
         public HttpResponseMessage updateProviderConfirmStatus(int notificationId, string ProviderId)
         {
             var result = _pushNotificationServices.updateProviderConfirmStatus(notificationId, ProviderId);
@@ -76,7 +76,7 @@
         }
 
         [HttpPost]
-        [Route("{notificationId}/Ambulance/{CaseManagerId}")]
+        [Route("{notificationId}/CaseManager/{CaseManagerId}")]
         public HttpResponseMessage updateCasemanagerConfirmStatus(int notificationId, int CaseManagerId)
         {
             var result = _pushNotificationServices.updateCasemanagerConfirmStatus(notificationId, CaseManagerId);
