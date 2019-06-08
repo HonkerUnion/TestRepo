@@ -7,8 +7,8 @@ namespace WebApplicationArch
 {
     public class BackgroundScheduledProcessorConfig
     {
-        public const string HANGFIRE_DB_CONN_STR_NAME = "Hangfire.UexDb";
-        public const string HANGFIRE_DB_SCHEMA_NAME = "hangfire-uex-db";
+        public const string HANGFIRE_DB_CONN_STR_NAME = "HangfireDb";
+        public const string HANGFIRE_DB_SCHEMA_NAME = "dbo";
 
         public static void InitiateProcessor(IAppBuilder app, HttpContext httpContext)
         {
