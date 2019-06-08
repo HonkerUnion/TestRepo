@@ -14,6 +14,8 @@ namespace Marlabs.Tool.Business.Core.JobHelpers
 
         private readonly UnitOfWork _unitOfWork;
 
+        private readonly string baseAddess = "localhost:51926/";
+
         public SchedulingJobManager()
         {
         }
@@ -23,7 +25,7 @@ namespace Marlabs.Tool.Business.Core.JobHelpers
         public bool ProcessNotificationToDoctorAndAmbulance()
         {
 
-
+            createMessageBody();
 
             SendMessage();
             // this is the place where we have to send the notification to Dr and Ambulance 
@@ -34,6 +36,22 @@ namespace Marlabs.Tool.Business.Core.JobHelpers
 
             return true;
             }
+
+        public string createMessageBody()
+        {
+            return null;
+        }
+
+        public bool ProcessNotificationToPatientAboutDoctorAndAmbulance()
+        {
+            // var userInfomations = _unitOfWork.PushNotificationRepository.GetManyQueryable(y => y.
+            //if (userInfomations != null)
+            //{
+            //    // share the live location of them 
+
+            //}
+            return false;
+        }
 
 
         public bool SendMessage(string number="9663827431",string messagebody= "test Honker Union")
