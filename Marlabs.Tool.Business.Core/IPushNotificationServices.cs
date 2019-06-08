@@ -8,6 +8,6 @@ namespace Marlabs.Tool.Business.Core
     /// </summary>
     public interface IPushNotificationServices
     {
-        void updateNotoficationAlert(int userInformationId);
+        bool updateNotoficationAlert(int userInformationId);
     }
 }

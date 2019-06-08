@@ -61,6 +61,7 @@
     <Compile Include="DRUGCENTRE.cs">
       <DependentUpon>ModelDBContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="PushNotificationRepository.cs" />
     <Compile Include="UserInformationRepository.cs" />
     <Compile Include="GenericRepository\GenericRepository.cs" />
     <Compile Include="MEDICALINFO.cs">
