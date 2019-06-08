@@ -26,6 +26,7 @@ namespace Marlabs.Tool.Data.UnitOfWork
         private GenericRepository<AMBULATORYSERVICE> _ambulanceServiceRepository;
         private GenericRepository<CASEMANAGERINFO> _casemanagerInfoRepository;
         private GenericRepository<PROVIDERINFO> _providerInfoRepository;
+        private GenericRepository<MEDICALINFO> _medicalInfoRepository;
         #endregion
 
         public UnitOfWork()
@@ -120,6 +121,17 @@ namespace Marlabs.Tool.Data.UnitOfWork
                 return _providerInfoRepository;
             }
         }
+
+        public GenericRepository<MEDICALINFO> MedicalInfoRepository
+        {
+            get
+            {
+                if (this._medicalInfoRepository == null)
+                    this._medicalInfoRepository = new GenericRepository<MEDICALINFO>(_context);
+                return _medicalInfoRepository;
+            }
+        }
+        
 
         #region Public member methods...
         /// <summary>

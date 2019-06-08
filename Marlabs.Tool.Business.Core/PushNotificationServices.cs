@@ -33,23 +33,29 @@ namespace BusinessServices
         {
             var success = false;
             var userInfomations = _unitOfWork.UserInformationRepository.GetAll().ToList().Where(u => u.USERINFORMATIONID == userInformationId).FirstOrDefault();
-            using (var scope = new TransactionScope())
+
+            if (userInfomations != null)
             {
-                var pushNotification = new PUSHNOTIFICATION
+                var medicalInfo = _unitOfWork.MedicalInfoRepository.GetFirst(y => y.USERINFORMATIONID == userInformationId);
+                using (var scope = new TransactionScope())
                 {
-                    USERINFORMATIONID = userInfomations.USERINFORMATIONID,
-                    USERID = userInfomations.USERID,
-                    AMBULATORYCONFIRMSTATUS = "N",
-                    CASEMANAGERCONFIRMSTATUS = "N",
-                    DRUGCENTRECONFIRMSTATUS = "N",
-                    PHYSICIANCONFIRMSTATUS = "N",
-                    PROVIDERCONFIRMSTATUS = "N",
-                    CREATEDON = System.DateTime.UtcNow,
-                };
-                _unitOfWork.PushNotificationRepository.Insert(pushNotification);
-                _unitOfWork.Save();
-                scope.Complete();
-                success = true;
+                    var pushNotification = new PUSHNOTIFICATION
+                    {
+                        USERINFORMATIONID = userInfomations.USERINFORMATIONID,
+                        USERID = userInfomations.USERID,
+                        AMBULATORYCONFIRMSTATUS = "N",
+                        CASEMANAGERCONFIRMSTATUS = "N",
+                        DRUGCENTRECONFIRMSTATUS = "N",
+                        PHYSICIANCONFIRMSTATUS = "N",
+                        PROVIDERCONFIRMSTATUS = "N",
+                        CREATEDON = System.DateTime.UtcNow,
+                        TREATMENTTYPE = "3" //TODO:: Hardcoded for now 
+                    };
+                    _unitOfWork.PushNotificationRepository.Insert(pushNotification);
+                    _unitOfWork.Save();
+                    scope.Complete();
+                    success = true;
+                }
             }
             return success;
         }
