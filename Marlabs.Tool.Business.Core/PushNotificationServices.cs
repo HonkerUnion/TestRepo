@@ -33,23 +33,26 @@ namespace BusinessServices
         {
             var success = false;
             var userInfomations = _unitOfWork.UserInformationRepository.GetAll().ToList().Where(u => u.USERINFORMATIONID == userInformationId).FirstOrDefault();
-            using (var scope = new TransactionScope())
+            if (userInfomations != null)
             {
-                var pushNotification = new PUSHNOTIFICATION
+                using (var scope = new TransactionScope())
                 {
-                    USERINFORMATIONID = userInfomations.USERINFORMATIONID,
-                    USERID = userInfomations.USERID,
-                    AMBULATORYCONFIRMSTATUS = "N",
-                    CASEMANAGERCONFIRMSTATUS = "N",
-                    DRUGCENTRECONFIRMSTATUS = "N",
-                    PHYSICIANCONFIRMSTATUS = "N",
-                    PROVIDERCONFIRMSTATUS = "N",
-                    CREATEDON = System.DateTime.UtcNow,
-                };
-                _unitOfWork.PushNotificationRepository.Insert(pushNotification);
-                _unitOfWork.Save();
-                scope.Complete();
-                success = true;
+                    var pushNotification = new PUSHNOTIFICATION
+                    {
+                        USERINFORMATIONID = userInfomations.USERINFORMATIONID,
+                        USERID = userInfomations.USERID,
+                        AMBULATORYCONFIRMSTATUS = "N",
+                        CASEMANAGERCONFIRMSTATUS = "N",
+                        DRUGCENTRECONFIRMSTATUS = "N",
+                        PHYSICIANCONFIRMSTATUS = "N",
+                        PROVIDERCONFIRMSTATUS = "N",
+                        CREATEDON = System.DateTime.UtcNow,
+                    };
+                    _unitOfWork.PushNotificationRepository.Insert(pushNotification);
+                    _unitOfWork.Save();
+                    scope.Complete();
+                    success = true;
+                }
             }
             return success;
         }
@@ -66,13 +69,16 @@ namespace BusinessServices
             using (var scope = new TransactionScope())
             {
                 var pushNotification = _unitOfWork.PushNotificationRepository.GetAll().ToList().Where(u => u.NOTIFICATIONID == notificationId).FirstOrDefault();
-                pushNotification.AMBULATORYCONFIRMSTATUS = "Y";
-                pushNotification.AMBULATORYID = AmulatoryId;
-                pushNotification.UPDATEDON = System.DateTime.UtcNow;
-                _unitOfWork.PushNotificationRepository.Update(pushNotification);
-                _unitOfWork.Save();
-                scope.Complete();
-                success = true;
+                if (pushNotification != null)
+                {
+                    pushNotification.AMBULATORYCONFIRMSTATUS = "Y";
+                    pushNotification.AMBULATORYID = AmulatoryId;
+                    pushNotification.UPDATEDON = System.DateTime.UtcNow;
+                    _unitOfWork.PushNotificationRepository.Update(pushNotification);
+                    _unitOfWork.Save();
+                    scope.Complete();
+                    success = true;
+                }
             }
             return success;
         }
@@ -90,13 +96,16 @@ namespace BusinessServices
             using (var scope = new TransactionScope())
             {
                 var pushNotification = _unitOfWork.PushNotificationRepository.GetAll().ToList().Where(u => u.NOTIFICATIONID == notificationId).FirstOrDefault();
-                pushNotification.PHYSICIANCONFIRMSTATUS = "Y";
-                pushNotification.PHYSICIANID = physicanId;
-                pushNotification.UPDATEDON = System.DateTime.UtcNow;
-                _unitOfWork.PushNotificationRepository.Update(pushNotification);
-                _unitOfWork.Save();
-                scope.Complete();
-                success = true;
+                if (pushNotification != null)
+                {
+                    pushNotification.PHYSICIANCONFIRMSTATUS = "Y";
+                    pushNotification.PHYSICIANID = physicanId;
+                    pushNotification.UPDATEDON = System.DateTime.UtcNow;
+                    _unitOfWork.PushNotificationRepository.Update(pushNotification);
+                    _unitOfWork.Save();
+                    scope.Complete();
+                    success = true;
+                }
             }
             return success;
         }
@@ -114,13 +123,16 @@ namespace BusinessServices
             using (var scope = new TransactionScope())
             {
                 var pushNotification = _unitOfWork.PushNotificationRepository.GetAll().ToList().Where(u => u.NOTIFICATIONID == notificationId).FirstOrDefault();
-                pushNotification.DRUGCENTRECONFIRMSTATUS = "Y";
-                pushNotification.DRUGCENTREID = DrugCentreId;
-                pushNotification.UPDATEDON = System.DateTime.UtcNow;
-                _unitOfWork.PushNotificationRepository.Update(pushNotification);
-                _unitOfWork.Save();
-                scope.Complete();
-                success = true;
+                if (pushNotification != null)
+                {
+                    pushNotification.DRUGCENTRECONFIRMSTATUS = "Y";
+                    pushNotification.DRUGCENTREID = DrugCentreId;
+                    pushNotification.UPDATEDON = System.DateTime.UtcNow;
+                    _unitOfWork.PushNotificationRepository.Update(pushNotification);
+                    _unitOfWork.Save();
+                    scope.Complete();
+                    success = true;
+                }
             }
             return success;
         }
@@ -138,13 +150,16 @@ namespace BusinessServices
             using (var scope = new TransactionScope())
             {
                 var pushNotification = _unitOfWork.PushNotificationRepository.GetAll().ToList().Where(u => u.NOTIFICATIONID == notificationId).FirstOrDefault();
-                pushNotification.PROVIDERCONFIRMSTATUS = "Y";
-                pushNotification.PROVIDERNO = ProviderId;
-                pushNotification.UPDATEDON = System.DateTime.UtcNow;
-                _unitOfWork.PushNotificationRepository.Update(pushNotification);
-                _unitOfWork.Save();
-                scope.Complete();
-                success = true;
+                if (pushNotification != null)
+                {
+                    pushNotification.PROVIDERCONFIRMSTATUS = "Y";
+                    pushNotification.PROVIDERNO = ProviderId;
+                    pushNotification.UPDATEDON = System.DateTime.UtcNow;
+                    _unitOfWork.PushNotificationRepository.Update(pushNotification);
+                    _unitOfWork.Save();
+                    scope.Complete();
+                    success = true;
+                }
             }
             return success;
         }
@@ -161,13 +176,16 @@ namespace BusinessServices
             using (var scope = new TransactionScope())
             {
                 var pushNotification = _unitOfWork.PushNotificationRepository.GetAll().ToList().Where(u => u.NOTIFICATIONID == notificationId).FirstOrDefault();
-                pushNotification.CASEMANAGERCONFIRMSTATUS = "Y";
-                pushNotification.CASEMANAGERID = CaseManagerId;
-                pushNotification.UPDATEDON = System.DateTime.UtcNow;
-                _unitOfWork.PushNotificationRepository.Update(pushNotification);
-                _unitOfWork.Save();
-                scope.Complete();
-                success = true;
+                if (pushNotification != null)
+                {
+                    pushNotification.CASEMANAGERCONFIRMSTATUS = "Y";
+                    pushNotification.CASEMANAGERID = CaseManagerId;
+                    pushNotification.UPDATEDON = System.DateTime.UtcNow;
+                    _unitOfWork.PushNotificationRepository.Update(pushNotification);
+                    _unitOfWork.Save();
+                    scope.Complete();
+                    success = true;
+                }
             }
             return success;
         }
