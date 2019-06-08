@@ -14,7 +14,7 @@ namespace WebApplicationArch.Scheduler
             // Add/Update Recurring jobs
             
             RecurringJob.AddOrUpdate(SchedulingJobManager.PROCESS_NOTIFICATION_SENDING_JOB_NAME,
-                                        () => new SchedulingJobManager().ProcessNotificationToDoctorAndAmbulance(0), Cron.Minutely);
+                                        () => new SchedulingJobManager().ProcessNotificationToDoctorAndAmbulanceForNotAcceptedUser(), Cron.Minutely);
 
             RecurringJob.AddOrUpdate(SchedulingJobManager.PROCESS_NOTIFICATION_SENDING_JOB_NAME,
                                         () => new SchedulingJobManager().ProcessNotificationToPatientAboutDoctorAndAmbulance(0), Cron.Minutely);

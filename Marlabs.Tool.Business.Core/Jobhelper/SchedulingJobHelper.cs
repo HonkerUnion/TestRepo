@@ -25,6 +25,18 @@ namespace Marlabs.Tool.Business.Core.JobHelpers
 
         public const string PROCESS_NOTIFICATION_SENDING_JOB_NAME = "Process-Notification-Sending-Job";
 
+
+       public bool ProcessNotificationToDoctorAndAmbulanceForNotAcceptedUser()
+        {
+            var userInfoDetails = _unitOfWork.PushNotificationRepository.GetMany(y => y.AMBULATORYCONFIRMSTATUS == "N" || y.PROVIDERCONFIRMSTATUS == "N" || y.PHYSICIANCONFIRMSTATUS == "N" || y.PROVIDERCONFIRMSTATUS == "N").Select(y => y.USERINFORMATIONID).ToList();
+            foreach(var usrId in userInfoDetails)
+            {
+                ProcessNotificationToDoctorAndAmbulance((int)usrId);
+            }
+            return true;
+        }
+
+        // this method is primary used to send the notification to respective autority
         public bool ProcessNotificationToDoctorAndAmbulance(int userInfoId)
         {
 
