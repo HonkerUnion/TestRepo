@@ -61,6 +61,8 @@ public partial class USERINFORMATION
 
     public Nullable<System.DateTime> UPDATEDON { get; set; }
 
+    public string TREATMENTTYPE { get; set; }
+
 
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

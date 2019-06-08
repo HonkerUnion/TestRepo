@@ -46,6 +46,8 @@ public partial class AMBULATORYSERVICE
 
     public Nullable<int> USERID { get; set; }
 
+    public string CONTACTNO { get; set; }
+
 }
 
 }

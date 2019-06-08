@@ -44,7 +44,7 @@ public partial class PHYSICIANINFO
 
     public string TELEPHONE { get; set; }
 
-    public string LATITUDE { get; set; }
+    public Nullable<double> LATITUDE { get; set; }
 
     public string LONGITUDE { get; set; }
 
