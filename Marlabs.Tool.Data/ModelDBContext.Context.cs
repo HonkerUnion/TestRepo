@@ -31,7 +31,6 @@ public partial class HonkerUnionEntities : DbContext
         throw new UnintentionalCodeFirstException();
     }
 
-
     public virtual DbSet<AMBULATORYSERVICE> AMBULATORYSERVICEs { get; set; }
 
     public virtual DbSet<MEDICALINFO> MEDICALINFOes { get; set; }

@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="IPushNotificationServices.cs" />
     <Compile Include="IUserInfoServices.cs" />
     <Compile Include="IProductServices.cs" />
     <Compile Include="MapperCreator.cs" />

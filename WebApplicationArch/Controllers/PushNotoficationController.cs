@@ -9,8 +9,8 @@ using Marlabs.Tool.Business.Core;
 
 namespace WebApplicationArch.Controllers
 {
-    [RoutePrefix("UserInfo")]
-    public class UserInformationController : ApiController
+    [RoutePrefix("Notification")]
+    public class PushNotoficationController : ApiController
     {
 
         private readonly IUserInfoServices _userInfoServices;
@@ -20,19 +20,18 @@ namespace WebApplicationArch.Controllers
         /// <summary>
         /// Public constructor to initialize user service instance
         /// </summary>
-        public UserInformationController()
+        public PushNotoficationController()
         {
             _userInfoServices = new UserInformationServices();
         }
 
         #endregion
 
-
-        [HttpGet]
-        [Route("{userId}")]
-        public HttpResponseMessage Get(int userId)
+        [HttpPost]
+        [Route("Alert")]
+        public HttpResponseMessage UpdateNotoficationAlert(int userInformationId)
         {
-            var userInformationList = _userInfoServices.getUserInformationByUserId(userId);
+            var userInformationList = _userInfoServices.getUserInformationByUserId(userInformationId);
             if (userInformationList != null)
                 return Request.CreateResponse(HttpStatusCode.OK, userInformationList);
             return Request.CreateErrorResponse(HttpStatusCode.NotFound, "No userinformation List Available");
