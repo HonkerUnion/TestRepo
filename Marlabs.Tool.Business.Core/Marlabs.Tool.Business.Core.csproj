@@ -53,6 +53,7 @@
     <Compile Include="MapperCreator.cs" />
     <Compile Include="PushNotificationServices.cs" />
     <Compile Include="UserInformationServices.cs" />
+    <Compile Include="Jobhelper\SchedulingJobHelper.cs" />
     <Compile Include="ProductServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
