@@ -25,12 +25,13 @@ namespace BusinessServices
         }
 
         /// <summary>
-        /// Fetches userinformation by userId
+        /// Insert NotoficationAlert by userInformationId
         /// </summary>
         /// <param name="productId"></param>
         /// <returns></returns>
         public bool updateNotoficationAlert(int userInformationId)
         {
+            var success = false;
             var userInfomations = _unitOfWork.UserInformationRepository.GetAll().ToList().Where(u => u.USERINFORMATIONID == userInformationId).FirstOrDefault();
             using (var scope = new TransactionScope())
             {
@@ -45,12 +46,132 @@ namespace BusinessServices
                     PROVIDERCONFIRMSTATUS = "N",
                     CREATEDON = System.DateTime.UtcNow,
                 };
-                //_unitOfWork.ProductRepository.Insert(product);
-                //_unitOfWork.Save();
-                //scope.Complete();
-                //return product.ProductId;
+                _unitOfWork.PushNotificationRepository.Insert(pushNotification);
+                _unitOfWork.Save();
+                scope.Complete();
+                success = true;
             }
-            return true;
+            return success;
         }
+
+        /// <summary>
+        /// Update Amulatory
+        /// </summary>
+        /// <param name="notificationId"></param>
+        /// <param name="AmulatoryId"></param>
+        /// <returns></returns>
+        public bool updateAmulatoryConfirmStatus(int notificationId,int AmulatoryId)
+        {
+            var success = false;
+            using (var scope = new TransactionScope())
+            {
+                var pushNotification = _unitOfWork.PushNotificationRepository.GetAll().ToList().Where(u => u.NOTIFICATIONID == notificationId).FirstOrDefault();
+                pushNotification.AMBULATORYCONFIRMSTATUS = "Y";
+                pushNotification.AMBULATORYID = AmulatoryId;
+                pushNotification.UPDATEDON = System.DateTime.UtcNow;
+                _unitOfWork.PushNotificationRepository.Update(pushNotification);
+                _unitOfWork.Save();
+                scope.Complete();
+                success = true;
+            }
+            return success;
+        }
+
+
+        /// <summary>
+        /// Update Amulatory
+        /// </summary>
+        /// <param name="notificationId"></param>
+        /// <param name="physicanId"></param>
+        /// <returns></returns>
+        public bool updatePhysicanInfoConfirmStatus(int notificationId, int physicanId)
+        {
+            var success = false;
+            using (var scope = new TransactionScope())
+            {
+                var pushNotification = _unitOfWork.PushNotificationRepository.GetAll().ToList().Where(u => u.NOTIFICATIONID == notificationId).FirstOrDefault();
+                pushNotification.PHYSICIANCONFIRMSTATUS = "Y";
+                pushNotification.PHYSICIANID = physicanId;
+                pushNotification.UPDATEDON = System.DateTime.UtcNow;
+                _unitOfWork.PushNotificationRepository.Update(pushNotification);
+                _unitOfWork.Save();
+                scope.Complete();
+                success = true;
+            }
+            return success;
+        }
+
+
+        /// <summary>
+        /// Update Amulatory
+        /// </summary>
+        /// <param name="notificationId"></param>
+        /// <param name="DrugCentreId"></param>
+        /// <returns></returns>
+        public bool updateDrugCentreConfirmStatus(int notificationId, int DrugCentreId)
+        {
+            var success = false;
+            using (var scope = new TransactionScope())
+            {
+                var pushNotification = _unitOfWork.PushNotificationRepository.GetAll().ToList().Where(u => u.NOTIFICATIONID == notificationId).FirstOrDefault();
+                pushNotification.DRUGCENTRECONFIRMSTATUS = "Y";
+                pushNotification.DRUGCENTREID = DrugCentreId;
+                pushNotification.UPDATEDON = System.DateTime.UtcNow;
+                _unitOfWork.PushNotificationRepository.Update(pushNotification);
+                _unitOfWork.Save();
+                scope.Complete();
+                success = true;
+            }
+            return success;
+        }
+
+
+        /// <summary>
+        /// Update Amulatory
+        /// </summary>
+        /// <param name="notificationId"></param>
+        /// <param name="ProviderId"></param>
+        /// <returns></returns>
+        public bool updateProviderConfirmStatus(int notificationId, string ProviderId)
+        {
+            var success = false;
+            using (var scope = new TransactionScope())
+            {
+                var pushNotification = _unitOfWork.PushNotificationRepository.GetAll().ToList().Where(u => u.NOTIFICATIONID == notificationId).FirstOrDefault();
+                pushNotification.PROVIDERCONFIRMSTATUS = "Y";
+                pushNotification.PROVIDERNO = ProviderId;
+                pushNotification.UPDATEDON = System.DateTime.UtcNow;
+                _unitOfWork.PushNotificationRepository.Update(pushNotification);
+                _unitOfWork.Save();
+                scope.Complete();
+                success = true;
+            }
+            return success;
+        }
+
+        /// <summary>
+        /// Update Amulatory
+        /// </summary>
+        /// <param name="notificationId"></param>
+        /// <param name="AmulatoryId"></param>
+        /// <returns></returns>
+        public bool updateCasemanagerConfirmStatus(int notificationId, int CaseManagerId)
+        {
+            var success = false;
+            using (var scope = new TransactionScope())
+            {
+                var pushNotification = _unitOfWork.PushNotificationRepository.GetAll().ToList().Where(u => u.NOTIFICATIONID == notificationId).FirstOrDefault();
+                pushNotification.CASEMANAGERCONFIRMSTATUS = "Y";
+                pushNotification.CASEMANAGERID = CaseManagerId;
+                pushNotification.UPDATEDON = System.DateTime.UtcNow;
+                _unitOfWork.PushNotificationRepository.Update(pushNotification);
+                _unitOfWork.Save();
+                scope.Complete();
+                success = true;
+            }
+            return success;
+        }
+
+
     }
 }

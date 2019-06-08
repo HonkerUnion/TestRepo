@@ -1,19 +1,16 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using BusinessEntity;
-using BusinessServices;
-using Marlabs.Tool.Business.Core;
-
-namespace WebApplicationArch.Controllers
+﻿namespace WebApplicationArch.Controllers
 {
+    using System.Net;
+    using System.Net.Http;
+    using System.Web.Http;
+    using BusinessServices;
+    using Marlabs.Tool.Business.Core;
+
     [RoutePrefix("Notification")]
     public class PushNotoficationController : ApiController
     {
 
-        private readonly IUserInfoServices _userInfoServices;
+        private readonly IPushNotificationServices _pushNotificationServices;
 
         #region Public Constructor
 
@@ -22,7 +19,7 @@ namespace WebApplicationArch.Controllers
         /// </summary>
         public PushNotoficationController()
         {
-            _userInfoServices = new UserInformationServices();
+            _pushNotificationServices = new PushNotificationServices();
         }
 
         #endregion
@@ -31,10 +28,61 @@ namespace WebApplicationArch.Controllers
         [Route("Alert")]
         public HttpResponseMessage UpdateNotoficationAlert(int userInformationId)
         {
-            var userInformationList = _userInfoServices.getUserInformationByUserId(userInformationId);
-            if (userInformationList != null)
-                return Request.CreateResponse(HttpStatusCode.OK, userInformationList);
-            return Request.CreateErrorResponse(HttpStatusCode.NotFound, "No userinformation List Available");
+            var result = _pushNotificationServices.updateNotoficationAlert(userInformationId);
+            if (result)
+                return Request.CreateResponse(HttpStatusCode.OK, result);
+            return Request.CreateErrorResponse(HttpStatusCode.NotFound, "No Notification Available");
+        }
+
+        [HttpPost]
+        [Route("{notificationId}/Ambulance/{AmulatoryId}")]
+        public HttpResponseMessage updateAmulatoryConfirmStatus(int notificationId, int AmulatoryId)
+        {
+            var result = _pushNotificationServices.updateAmulatoryConfirmStatus(notificationId, AmulatoryId);
+            if (result)
+                return Request.CreateResponse(HttpStatusCode.OK, result);
+            return Request.CreateErrorResponse(HttpStatusCode.NotFound, "No Notification Available");
+        }
+
+        [HttpPost]
+        [Route("{notificationId}/Ambulance/{physicanId}")]
+        public HttpResponseMessage updatePhysicanInfoConfirmStatus(int notificationId, int physicanId)
+        {
+            var result = _pushNotificationServices.updatePhysicanInfoConfirmStatus(notificationId, physicanId);
+            if (result)
+                return Request.CreateResponse(HttpStatusCode.OK, result);
+            return Request.CreateErrorResponse(HttpStatusCode.NotFound, "No Notification Available");
+        }
+
+        [HttpPost]
+        [Route("{notificationId}/Ambulance/{DrugCentreId}")]
+        public HttpResponseMessage updateDrugCentreConfirmStatus(int notificationId, int DrugCentreId)
+        {
+            var result = _pushNotificationServices.updateDrugCentreConfirmStatus(notificationId, DrugCentreId);
+            if (result)
+                return Request.CreateResponse(HttpStatusCode.OK, result);
+            return Request.CreateErrorResponse(HttpStatusCode.NotFound, "No Notification Available");
+        }
+
+
+        [HttpPost]
+        [Route("{notificationId}/Ambulance/{ProviderId}")]
+        public HttpResponseMessage updateProviderConfirmStatus(int notificationId, string ProviderId)
+        {
+            var result = _pushNotificationServices.updateProviderConfirmStatus(notificationId, ProviderId);
+            if (result)
+                return Request.CreateResponse(HttpStatusCode.OK, result);
+            return Request.CreateErrorResponse(HttpStatusCode.NotFound, "No Notification Available");
+        }
+
+        [HttpPost]
+        [Route("{notificationId}/Ambulance/{CaseManagerId}")]
+        public HttpResponseMessage updateCasemanagerConfirmStatus(int notificationId, int CaseManagerId)
+        {
+            var result = _pushNotificationServices.updateCasemanagerConfirmStatus(notificationId, CaseManagerId);
+            if (result)
+                return Request.CreateResponse(HttpStatusCode.OK, result);
+            return Request.CreateErrorResponse(HttpStatusCode.NotFound, "No Notification Available");
         }
     }
 }

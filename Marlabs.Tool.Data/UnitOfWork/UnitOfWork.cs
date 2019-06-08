@@ -19,6 +19,13 @@ namespace Marlabs.Tool.Data.UnitOfWork
         private HonkerUnionEntities _context = null;
         private GenericRepository<Product> _productRepository;
         private GenericRepository<USERINFORMATION> _userInformationRepository;
+        private GenericRepository<PUSHNOTIFICATION> _pushNotificationRepository;
+
+        private GenericRepository<DRUGCENTRE> _drugCentreRepository;
+        private GenericRepository<PHYSICIANINFO> _physicanInfoRepository;
+        private GenericRepository<AMBULATORYSERVICE> _ambulanceServiceRepository;
+        private GenericRepository<CASEMANAGERINFO> _casemanagerInfoRepository;
+        private GenericRepository<PROVIDERINFO> _providerInfoRepository;
         #endregion
 
         public UnitOfWork()
@@ -50,6 +57,67 @@ namespace Marlabs.Tool.Data.UnitOfWork
                 if (this._userInformationRepository == null)
                     this._userInformationRepository = new GenericRepository<USERINFORMATION>(_context);
                 return _userInformationRepository;
+            }
+        }
+
+
+        public GenericRepository<PUSHNOTIFICATION> PushNotificationRepository
+        {
+            get
+            {
+                if (this._pushNotificationRepository == null)
+                    this._pushNotificationRepository = new GenericRepository<PUSHNOTIFICATION>(_context);
+                return _pushNotificationRepository;
+            }
+        }
+
+        public GenericRepository<DRUGCENTRE> DrugCentreRepository
+        {
+            get
+            {
+                if (this._drugCentreRepository == null)
+                    this._drugCentreRepository = new GenericRepository<DRUGCENTRE>(_context);
+                return _drugCentreRepository;
+            }
+        }
+
+        public GenericRepository<PHYSICIANINFO> PhysicanInfoRepository
+        {
+            get
+            {
+                if (this._physicanInfoRepository == null)
+                    this._physicanInfoRepository = new GenericRepository<PHYSICIANINFO>(_context);
+                return _physicanInfoRepository;
+            }
+        }
+
+        public GenericRepository<AMBULATORYSERVICE> AmbulanceServiceRepository
+        {
+            get
+            {
+                if (this._ambulanceServiceRepository == null)
+                    this._ambulanceServiceRepository = new GenericRepository<AMBULATORYSERVICE>(_context);
+                return _ambulanceServiceRepository;
+            }
+        }
+
+        public GenericRepository<CASEMANAGERINFO> CasemanagerInfoRepository
+        {
+            get
+            {
+                if (this._casemanagerInfoRepository == null)
+                    this._casemanagerInfoRepository = new GenericRepository<CASEMANAGERINFO>(_context);
+                return _casemanagerInfoRepository;
+            }
+        }
+
+        public GenericRepository<PROVIDERINFO> ProviderInfoRepository
+        {
+            get
+            {
+                if (this._providerInfoRepository == null)
+                    this._providerInfoRepository = new GenericRepository<PROVIDERINFO>(_context);
+                return _providerInfoRepository;
             }
         }
 
