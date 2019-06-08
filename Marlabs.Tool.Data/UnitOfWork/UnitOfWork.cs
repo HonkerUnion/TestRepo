@@ -18,6 +18,7 @@ namespace Marlabs.Tool.Data.UnitOfWork
 
         private HonkerUnionEntities _context = null;
         private GenericRepository<Product> _productRepository;
+        private GenericRepository<USERINFORMATION> _userInformationRepository;
         #endregion
 
         public UnitOfWork()
@@ -36,6 +37,19 @@ namespace Marlabs.Tool.Data.UnitOfWork
                 if (this._productRepository == null)
                     this._productRepository = new GenericRepository<Product>(_context);
                 return _productRepository;
+            }
+        }
+
+        /// <summary>
+        /// Get/Set Property for User Information repository.
+        /// </summary>
+        public GenericRepository<USERINFORMATION> UserInformationRepository
+        {
+            get
+            {
+                if (this._userInformationRepository == null)
+                    this._userInformationRepository = new GenericRepository<USERINFORMATION>(_context);
+                return _userInformationRepository;
             }
         }
 
