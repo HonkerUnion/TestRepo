@@ -3,6 +3,9 @@ using Marlabs.Tool.Business.Core.JobHelpers;
 
 namespace WebApplicationArch.Scheduler
 {
+   /// <summary>
+   /// This is basaclly job which run every minute to check and notification is accepted by other autority , if yes then it send message back to patient to intimate it 
+   /// </summary>
     public class ScheduleHelper
     {
         #region Initiation

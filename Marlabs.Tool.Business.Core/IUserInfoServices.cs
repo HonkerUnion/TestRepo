@@ -9,5 +9,6 @@ namespace Marlabs.Tool.Business.Core
     public interface IUserInfoServices
     {
         List<UserInformation> getUserInformationByUserId(int userId);
+        void SaveUserInformationByUserId(UserInformation userDetails);
     }
 }

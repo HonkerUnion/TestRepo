@@ -41,5 +41,16 @@ namespace BusinessServices
             }
             return null;
         }
+
+        public void SaveUserInformationByUserId(UserInformation userDetails)
+        {
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<UserInformation, USERINFORMATION>());
+            var mapper = config.CreateMapper();
+            var userInformationModel = mapper.Map<UserInformation, USERINFORMATION>(userDetails);
+             _unitOfWork.UserInformationRepository.Insert(userInformationModel);
+        }
+
+
+
     }
 }

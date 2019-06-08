@@ -6,6 +6,10 @@
     using BusinessServices;
     using Marlabs.Tool.Business.Core;
 
+
+    /// <summary>
+    /// THis api primary used to send the notification the diff authority manually
+    /// </summary>
     [RoutePrefix("Notification")]
     public class PushNotoficationController : ApiController
     {

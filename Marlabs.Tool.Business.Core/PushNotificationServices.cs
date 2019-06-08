@@ -36,7 +36,6 @@ namespace BusinessServices
 
             if (userInfomations != null)
             {
-                var medicalInfo = _unitOfWork.MedicalInfoRepository.GetFirst(y => y.USERINFORMATIONID == userInformationId);
                 using (var scope = new TransactionScope())
                 {
                     var pushNotification = new PUSHNOTIFICATION
@@ -49,7 +48,7 @@ namespace BusinessServices
                         PHYSICIANCONFIRMSTATUS = "N",
                         PROVIDERCONFIRMSTATUS = "N",
                         CREATEDON = System.DateTime.UtcNow,
-                        TREATMENTTYPE = "3" //TODO:: Hardcoded for now 
+                        TREATMENTTYPE = userInfomations.TREATMENTTYPE 
                     };
                     _unitOfWork.PushNotificationRepository.Insert(pushNotification);
                     _unitOfWork.Save();
