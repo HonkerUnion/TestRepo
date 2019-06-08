@@ -97,7 +97,7 @@ warning 6002: The table/view 'HonkerUnion.dbo.PHYSICIANINFO' does not have a pri
           <Property Name="PRACTICESTATE" Type="varchar" MaxLength="25" />
           <Property Name="PRACTICEZIP" Type="varchar" MaxLength="15" />
           <Property Name="TELEPHONE" Type="varchar" MaxLength="13" />
-          <Property Name="LATITUDE" Type="varchar" MaxLength="9" />
+          <Property Name="LATITUDE" Type="float" />
           <Property Name="LONGITUDE" Type="varchar" MaxLength="9" />
         </EntityType>
         <EntityType Name="PROVIDERINFO">
@@ -166,6 +166,7 @@ warning 6002: The table/view 'HonkerUnion.dbo.PUSHNOTIFICATION' does not have a 
           <Property Name="LONGITUDE" Type="varchar" MaxLength="9" />
           <Property Name="CREATEDON" Type="datetime" />
           <Property Name="UPDATEDON" Type="datetime" />
+          <Property Name="TREATMENTTYPE" Type="char" MaxLength="2" />
         </EntityType>
         <EntityType Name="USERLOGIN">
           <Key>
@@ -393,6 +394,7 @@ warning 6002: The table/view 'HonkerUnion.dbo.PUSHNOTIFICATION' does not have a 
           <Property Name="UPDATEDON" Type="DateTime" Precision="3" />
           <NavigationProperty Name="MEDICALINFOes" Relationship="HonkerUnionModel.FK__MEDICALIN__USERI__4F7CD00D" FromRole="USERINFORMATION" ToRole="MEDICALINFO" />
           <NavigationProperty Name="USERLOGIN" Relationship="HonkerUnionModel.FK__USERINFOR__USERI__4CA06362" FromRole="USERINFORMATION" ToRole="USERLOGIN" />
+          <Property Name="TREATMENTTYPE" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
         </EntityType>
         <EntityType Name="USERLOGIN">
           <Key>
@@ -460,7 +462,7 @@ warning 6002: The table/view 'HonkerUnion.dbo.PUSHNOTIFICATION' does not have a 
           <Property Name="PRACTICESTATE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="PRACTICEZIP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="TELEPHONE" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
-          <Property Name="LATITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="LATITUDE" Type="String" />
           <Property Name="LONGITUDE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="PUSHNOTIFICATION">
@@ -576,6 +578,7 @@ warning 6002: The table/view 'HonkerUnion.dbo.PUSHNOTIFICATION' does not have a 
           <EntitySetMapping Name="USERINFORMATIONs">
             <EntityTypeMapping TypeName="HonkerUnionModel.USERINFORMATION">
               <MappingFragment StoreEntitySet="USERINFORMATION">
+                <ScalarProperty Name="TREATMENTTYPE" ColumnName="TREATMENTTYPE" />
                 <ScalarProperty Name="UPDATEDON" ColumnName="UPDATEDON" />
                 <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
                 <ScalarProperty Name="LONGITUDE" ColumnName="LONGITUDE" />
